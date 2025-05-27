@@ -104,7 +104,7 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
  
  - [architectural decisions](./docs/adr.md)
 
- - [domain model with class diagram]('./docs/domain_model.md)
+ - [domain model with class diagram](./docs/domain_model.md)
 
  # Copyright
 
