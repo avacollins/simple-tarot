@@ -2,13 +2,11 @@
 
 # Project Spec
 
-![Cover](./assets/tarot-home.png) ![Menu](./assets/tarot-menu.png)
-
-## 0. Project Overview
+## Project Overview
 
 SimpleTarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content capabilities with a more robust backend.
 
-## 1. Software System
+##  Software System
 
 ### System Context
 
@@ -45,14 +43,20 @@ SimpleTarot is a tarot card reading app that is a rebuild of an [existing applic
 
 ![Admin App Diagram](./assets/admin_container.jpg)
 
-## 2. Simple Tarot Web Application
+## Simple Tarot Mobile and Web Application
 
 ### UI Designs
+
+- Will be leveraging existing application layouts for readings and profile
+
+- History and notes screens need to be redsigned
+
+- Storybook UI will leveraged as component documentation and CMS to create and update graph models in tandem with UI
 
 
 ### Functional Requirements
 
-- Mobile first design, universal render for web.
+- Mobile first design, universal render for web
 
 #### Authentication
 
