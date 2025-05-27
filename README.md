@@ -106,6 +106,8 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
  - [domain model with class diagram](./docs/domain_model.md)
 
+ - [sequence diagrams](./docs/sequence_diagrams.md)
+
  # Copyright
 
 The [Rider Waite](https://sacred-texts.com/tarot/faq.htm#uscopyright) cards used in this application are in the public domain; svg pictorial keys were obtained under [Creative Commons](https://creativecommons.org/publicdomain/zero/1.0/) open source licensing.
