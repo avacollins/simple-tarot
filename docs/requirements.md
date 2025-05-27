@@ -7,7 +7,7 @@ This is a living document with the architectural requirements of Simple Tarot
 
 | Stakeholder                 | Goal                                                                                         | Context                                                                                              |
 | --------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Myself                      | Launch app on mobile store                                           | Simple Tarot needs to be publicly available |
+| Myself                      | Integrate an LLM into the app                                        | Simple Tarot needs to be more robust in content |
 | User experience             | Improve content                                                      | The new backend should provide a more meaningful experience to users |
 | User experience             | Improve designs                                                      | The timeline and notes features need to be redesigned |
 | Developer experience        | The app should be fully documented                                   | The documentation should be created as if it were a team of developers |
