@@ -41,15 +41,23 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 ![Admin App Diagram](./assets/admin_container.jpg)
 
+##### Core API
+
+![Core API Diagram](./assets/api_container.jpg)
+
 ## Simple Tarot Mobile and Web Application
 
 ### UI Designs
+
+[Existing mobile UI](./assets/existing_ui.png)
 
 - Will be leveraging existing application layouts for readings and profile
 
 - History and notes screens need to be redsigned
 
 - Storybook UI will leveraged as component documentation and CMS to create and update graph models in tandem with UI
+
+- Admin application needs full design
 
 
 ### Functional Requirements
