@@ -70,6 +70,23 @@ This is a living document with the architectural requirements of Simple Tarot
 
 - Users can revisit past readings and notes
 
+#### Admin Experience
+
+- Application and backend services can be launched from Docker container
+    - Use Docker compose to run application and dependencies locally
+
+- Access to Graph DB
+    - Data bindings to production data
+
+- Access to analytics and crash reports
+    - A screen with the essentials embedded preferred over a link to firebase dashboard
+
+- Access to shared component library and UI documentation
+    - UI packages in Yarn workspace
+
+- Ability to trigger Lambda
+    - Shared hooks
+
 
 ## Other Influencers
 

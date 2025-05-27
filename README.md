@@ -1,10 +1,8 @@
-# SimpleTarot
+# Simple Tarot Project Spec
 
-# Project Spec
+## Overview
 
-## Project Overview
-
-SimpleTarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content capabilities with a more robust backend.
+Simple Tarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content generation using an LLM.
 
 ##  Software System
 
@@ -12,13 +10,13 @@ SimpleTarot is a tarot card reading app that is a rebuild of an [existing applic
 
 #### System Users
 
-- **👩🏻 Customer** — Users ask the tarot cards a question on their minds and get a reading, save readings and take notes
+- **User** — Users query the tarot cards and generate a reading, save readings and take notes
 
 - **Admin System** — Admins manage and gain insights into usage and performance of the Simple Tarot application
 
 #### External Systems
 
-- **Cloud Services** - Firebase, Graph DB, LLM, Lambda
+- **Cloud Services** - Firebase, Graph DB, Bedrock, Lambda, Expo
 
 #### System Context Diagram
 
@@ -26,11 +24,11 @@ SimpleTarot is a tarot card reading app that is a rebuild of an [existing applic
 
 ### System Containers
 
-- **Customer Mobile App** — React Native for iOS and Android
+- **User Facing Mobile App** — React Native for iOS and Android
 
-- **Admin Web App** - Next, Storybook UI, Docker
+- **Admin Only Web App** - React Native Web, Next, Storybook UI, Docker
 
-- **Core API** — Graph DB (undecided implementation), Bedrock LLM, Lambda functions
+- **Core API** — Graph DB (undecided implementation), LLM Foundation Model (undecided), Bedrock, Lambda
 
 
 #### Container Diagram
@@ -56,6 +54,8 @@ SimpleTarot is a tarot card reading app that is a rebuild of an [existing applic
 
 ### Functional Requirements
 
+#### User Experience
+
 - Mobile first design, universal render for web
 
 #### Authentication
@@ -75,7 +75,29 @@ SimpleTarot is a tarot card reading app that is a rebuild of an [existing applic
 
 - Users can revisit past readings and notes
 
+#### Admin Experience
 
-### Architectural Requirements
+- Application can be launch from Docker container
 
-👉🏽 Check out the [requirements doc](./docs/requirements.md).
+- Access to Graph DB
+
+- Access to analytics and crash reports
+
+- Access to shared component library and UI documentation
+
+- Ability to trigger Lambda
+
+
+## Architectural Documents
+
+👉🏽 Check out 
+ 
+ - [requirements doc](./docs/requirements.md)
+ 
+ - [architectural decisions doc](./docs/adr.md)
+
+ # Copyright
+
+The [Rider Waite](https://sacred-texts.com/tarot/faq.htm#uscopyright) cards used in this application are in the public domain; svg pictorial keys were obtained under [Creative Commons](https://creativecommons.org/publicdomain/zero/1.0/) open source licensing.
+
+The code in this repository is open for personal use but not for distributing.
