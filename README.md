@@ -30,6 +30,8 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 - **Core API** — Graph DB (undecided implementation), LLM Foundation Model (undecided), Bedrock, Lambda
 
+- **Shared Components** - Storybook UI to create universally rendered components and document their uses
+
 
 #### Container Diagram
 
@@ -107,6 +109,8 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
  - [domain model with class diagram](./docs/domain_model.md)
 
  - [sequence diagrams](./docs/sequence_diagrams.md)
+
+ - [mobile design document phase one](./docs/mobile_design_pahse_one.md)
 
  # Copyright
 

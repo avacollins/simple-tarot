@@ -3,7 +3,8 @@
 ## Entities
 
 - `User`
-- `Dealer`
+- `History`
+<!-- - `Dealer` -->
 - `Card`
 - `Spread`
 - `Positions`
@@ -24,41 +25,11 @@
 - `getUserProfile(userId)`
 - `getUserHistory(userId)`
 
-### `Dealer`
+### `History`
 
-- cards: number[]
-- reversals: boolean[]
-- `getDeck()`
-- `shuffleCards()`
-- `cutCards()`
-- `dealCards()`
-
-### `Card`
-
-- index: number
-- name: string
-- description: string
-- type: string
-- image: string
-- keywords: string
-- reversed_keywords: string
-- `getCard(index)`
-
-### `Spread`
-
-- name: string
-- display_name: string
-- positions: Position[]
-- `getCardMeaning(index, spread)`
-
-### `Position`
-
-- name: string
-- display_name: string
-- description: string
-- index: number
-- `getPosition(index, spread)`
-
+- creationTime: string
+- readingId: string
+- userId: string
 
 ### `Reading`
 
@@ -72,7 +43,53 @@
 - `saveNotes(id, userId)`
 - `openReading(readingId, userId)`
 
+### `Spread`
 
+- name: string
+- display_name: string
+- positions: Position[]
+
+
+<!-- ### `Dealer`
+
+- cards: number[]
+- reversals: boolean[]
+- `getDeck()`
+- `shuffleCards()`
+- `cutCards()`
+- `dealCards()` -->
+
+### `Card`
+
+- index: number
+- name: string
+- description: string
+- type: string
+- image: string
+- keywords: string
+- reversed_keywords: string
+- `getCard(index)`
+
+
+
+### `Position`
+
+- name: string
+- display_name: string
+- description: string
+- index: number
+- `getPosition(index, spread)`
+
+### `Meaning`
+
+- spread_name: string
+- spread_index: number
+- card_index: number
+- reversed: boolean
+
+
+
+<!-- 
 ## Class Diagram
 
-![Class Diagram](../assets/class_diagram.jpg)
+![Class Diagram](../assets/class_diagram.jpg) -->
