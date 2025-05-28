@@ -28,7 +28,7 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 - **Admin Only Web App** - React Native Web, Next, Storybook UI, Docker
 
-- **Core API** — Graph DB (undecided implementation), LLM Foundation Model (undecided), Bedrock, Lambda
+- **Core API** — Neo4J Graph DB, Node Graph API server, LLM Foundation Model (undecided), Bedrock, Lambda
 
 - **Shared Components** - Storybook UI to create universally rendered components and document their uses
 
@@ -55,9 +55,9 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 - Will be leveraging existing application layouts for readings and profile
 
-- History and notes screens need to be redsigned
+- History and notes screens need to be redesigned
 
-- Storybook UI will leveraged as component documentation and CMS to create and update graph models in tandem with UI
+- Storybook UI will be leveraged as component documentation
 
 - Admin application needs full design
 

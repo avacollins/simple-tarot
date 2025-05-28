@@ -95,8 +95,8 @@ Phase One will include
 
 ### Phase 1: Discovery and Planning (May 2025 - June 2025)
 
-- Finalize requirements and gather detailed specifications.
-- Design the architecture and create detailed technical documentation.
+- Finalize requirements and gather detailed specifications
+- Design the architecture and create detailed technical documentation
 
 ### Phase 2: Initial Development (June 2025 - July 2025)
 
@@ -107,7 +107,7 @@ Phase One will include
 
 ### Phase 4: Testing and Deployment (August 2025)
 
-- Perform comprehensive end-to-end testing (manual and automated.)
+- Perform comprehensive end-to-end testing
 - Deploy Graph DB to AWS
 - Deploy App to EAS
 
