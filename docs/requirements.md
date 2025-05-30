@@ -16,7 +16,7 @@ This is a living document with the architectural requirements of Simple Tarot
 
 | Constraint                                                              | Context                                                                                                                              |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [Technical] Authentication and Analytics must be deployed on Firebase   | Existing services on Firebase reamin in place |
+| [Technical] Authentication and Analytics must be deployed on Firebase   | Existing services on Firebase remain in place |
 | [Technical] Graph DB must be deployable on AWS                          | The new features rely on AWS for LLM using Bedrock |
 
 ## Quality Attributes
@@ -52,7 +52,7 @@ This is a living document with the architectural requirements of Simple Tarot
 
 - Users can create an account using email, phone number, or anonymously
     - Firebase used to manage authentication
-    - Anonymous users still gain an account with ficticious user name, they can change passwords
+    - Anonymous users still gain an account with fictitious user name, they cannot change passwords
 - Users can authenticate using their created account credentials
 - Authenticated users can update their profile information
 - Authenticated users can reset their passwords if forgotten

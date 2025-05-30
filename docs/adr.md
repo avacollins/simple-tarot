@@ -76,8 +76,9 @@ Migrating data to Neo4J
 
 ## Consequences
 
-- NeoJ4 is a new platform and will require time to ramp up. 
-- NeoJ4 provides many data adapters for uses with Python and Graph API.
+- Neo4J is a new platform and will require time to ramp up
+- Neo4J provides many data adapters for uses with Python and Graph API
+- Neo4J is deployable on AWS
 
 ---
 

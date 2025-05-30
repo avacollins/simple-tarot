@@ -73,7 +73,7 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 - Users can create an account using email, phone number, or anonymously
 - Users can authenticate using their created account credentials
 - Authenticated users can update their profile information
-- Authenticated users can reset their passwords if forgotten
+- Registered users can reset their passwords if forgotten
 
 #### Readings
 
