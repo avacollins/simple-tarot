@@ -1,6 +1,6 @@
 {
   "name": "simpletarot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple yet effective tarot reading application",
   "repository": "git@github.com:avacollins/simple-tarot.git",
   "author": "Ava Collins <info@avacollins.dev>",
@@ -12,30 +12,14 @@
   ],
     "scripts": {
     "build:types": "tsc -b",
-    "ios": "yarn workspace simple-tarot ios",
-    "lint": "tsc --noEmit && eslint . --ext tsx,json --quiet --fix"
+    "ios": "yarn workspace tarot ios",
+    "dev": "yarn workspace admin dev",
+    "storybook": "yarn workspace ui storybook"
   },
-   "resolutions": {
-    "expo": "~53.0.9",
-    "expo-status-bar": "~2.2.3",
+"resolutions": {
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-native": "^0.79.2",
-    "react-native-web": "^0.20.0",
-    "@babel/core": "^7.25.2",
-    "@types/react": "~19.0.10",
-    "typescript": "~5.8.3"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.26.0",
-    "@typescript-eslint/eslint-plugin": "^8.32.0",
-    "@typescript-eslint/parser": "^8.32.0",
-    "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.1.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "react-native": "0.79.2",
+    "react-native-web": "~0.20.0"
   }
 }
