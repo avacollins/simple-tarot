@@ -1,9 +1,14 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "private": true,
+  "exports": {
+    ".": {
+      "import": "./index.tsx",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "dependencies": {
     "@storybook/addon-actions": "^9.0.4",
     "@storybook/addon-controls": "^9.0.4",

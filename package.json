@@ -10,16 +10,31 @@
     "apps/*",
     "packages/*"
   ],
-    "scripts": {
+  "scripts": {
     "build:types": "tsc -b",
+    "lint": "eslint --ext .ts,.tsx apps packages",
+    "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
     "ios": "yarn workspace tarot ios",
     "dev": "yarn workspace admin dev",
     "storybook": "yarn workspace ui storybook"
   },
-"resolutions": {
+  "resolutions": {
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
     "react-native-web": "~0.20.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@storybook/addon-controls": "^9.0.4",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@types/webpack-env": "^1.18.8",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-native": "^5.0.0",
+    "npm": "^11.4.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
   }
 }

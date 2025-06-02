@@ -17,7 +17,19 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-    globalIgnores(['**/dist', '**/node_modules', '**/*.json', '**/*.mjs', "**/assets"]),
+    {
+      ignores: [
+        'apps/admin/.next/**',
+        'apps/tarot/.expo/**',
+        'packages/ui/.storybook/**',
+        'apps/tarot/metro.config.js',
+        '**/dist/**',
+        '**/node_modules/**',
+        '**/*.json',
+        '**/*.mjs',
+        '**/assets/**'
+      ]
+    },
     {
         extends: compat.extends(
             'eslint:recommended',
@@ -42,11 +54,6 @@ export default defineConfig([
                 project: true
             }
         },
-        settings: {
-            react: {
-                version: 'detect'
-            }
-        },
         rules: {
             'arrow-body-style': [2, 'as-needed'],
             'arrow-parens': [2, 'as-needed'],
@@ -58,7 +65,7 @@ export default defineConfig([
                 allowSingleLine: true
             }],
 
-            camelcase: [2, {
+            camelcase: [0, {
                 properties: 'never'
             }],
 

@@ -2,7 +2,7 @@
     "compilerOptions": {
         "strictNullChecks": true,
         "noUncheckedIndexedAccess": true,
-        "baseUrl": "./packages",
+        "baseUrl": ".",
         "paths": {
             "ui/*": [
                 "./packages/ui/*"
