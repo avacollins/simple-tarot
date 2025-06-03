@@ -8,7 +8,7 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 Currently in Development: Mobile Design Phase One, [see the design doc](./docs/mobile_design_pahse_one.md)
 
-Next up: Web Admin Design Phase One [see design doc]('./docs/web_admin_design.md)
+Next up: Web Admin Design Phase One [see design doc](./docs/web_admin_design.md)
 
 ## Architectural Documents
 
