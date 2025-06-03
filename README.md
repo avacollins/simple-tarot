@@ -26,7 +26,7 @@ Next up: Web Admin Design Phase One [see design doc]('./docs/web_admin_design.md
 
  - [Mobile Design Document Phase One](./docs/mobile_design_pahse_one.md)
 
- - [Web Admin Design Document Phase One]('./docs/web_admin_design.md)
+ - [Web Admin Design Document Phase One](./docs/web_admin_design.md)
 
  # Copyright
 
