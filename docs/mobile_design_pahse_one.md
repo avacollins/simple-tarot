@@ -16,7 +16,7 @@ The end goal is to rebuild the system backend to support phase two LLM integrati
 
 Technical goals for phase one are to design a new architecture that is scalable, modular, and maintainable, allowing new features to built up from the existing core over time. 
 
-![System COntext Phase One](../assets/mobile_system_context_p1.png)
+![System Context Phase One](../assets/mobile_system_context_p1.png)
 
 
 ## 3. Goals and Non-Goals
@@ -62,27 +62,19 @@ Phase One will include
 
 ### Key Components
 
-1. **Home Screen**: Initial screen after authentication with main application menu
+1. **Expo Routing Module**: Initial Expo setup with file based routing implemented
 
-2. **Auth Screen**: Manages user registration, login, and password reset
+2. **UI Module**: The core user interface library for both mobile and web applications
 
-3. **Account Screen**: Display user information, logout
+3. **Hooks Module**: Universal data providers for the UI
 
-4. **History Screen**: Display user reading history navigate to reading
+4. **Neo4J Module**: Graph DB and API server
 
-5. **Reading Screen**: Initiates new reading
-
-6. **Shuffle Screen**: Runs the shuffle and cut animation
-
-7. **Deal Screen**: Displays reading results in spread layout
-
-8. **Reading Detail Screen**: Displays reading detail text for each card in a carousel
-
-9. **Note Screen**: Saves and displays user saved notes for reading
+5. **Next Web Module**: Ensure setup includes a functional template repository
 
 ### Technology Stack
 
-- **Frontend**: React Native, TypeScript, Redux, Storybook UI
+- **Frontend**: React Native, TypeScript, Redux, Storybook UI, Next
 - **Backend**: Node, Neo4J
 - **Deployment**: Docker, AWS, Expo
 
@@ -121,16 +113,8 @@ Phase One will include
 
 ### Open Questions
 
+- **Test**: Frameworks TBD
+
+- **Versioning**: Leaning towards some form of Conventional Commits for monorepo overall, with EAS for mobile app build increments
+
 - **Profile Enhancement**: Should change email function be added now or later when it presents a need
-
-## 8. Appendix
-
-### References
-
- - [requirements](./docs/requirements.md)
- 
- - [architectural decisions](./docs/adr.md)
-
- - [domain model with class diagram](./docs/domain_model.md)
-
- - [sequence diagrams](./docs/sequence_diagrams.md)
