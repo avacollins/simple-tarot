@@ -4,8 +4,11 @@
         "noUncheckedIndexedAccess": true,
         "baseUrl": ".",
         "paths": {
-            "ui/*": [
+            "@ui/*": [
                 "./packages/ui/*"
+            ],
+            "@hooks/*": [
+                "./packages/hooks/*"
             ]
         },
         "jsx": "react-jsx"

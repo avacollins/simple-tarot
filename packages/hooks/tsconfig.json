@@ -11,11 +11,9 @@
     },
     "include": [
         "**/*.ts",
-        "**/*.tsx",
-        "../hooks/style/colors.ts"
+        "**/*.tsx"
     ],
     "exclude": [
-        "**/*.js",
-        "./.storybook/**",
+        "**/*.js"
     ]
 }
