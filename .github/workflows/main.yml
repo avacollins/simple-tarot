@@ -29,23 +29,35 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
+            - run: yarn install --frozen-lockfile --non-interactive
+              working-directory: .
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: build-artifact
+                  path: ./dist
 
     release:
         needs: build
         runs-on: ubuntu-latest
         steps:
-            - run: yarn install --frozen-lockfile --non-interactive
-              working-directory: .
+            - uses: actions/download-artifact@v4
+              with:
+                  name: build-artifact
+                  path: ./dist
             - run: yarn workspaces run semantic-release -e semantic-release-monorepo
               working-directory: .
-              env:
-                  GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+        env:
+            GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
     deploy:
         needs: build
         if: needs.build.outputs.src_changed == 'true'
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/download-artifact@v4
+              with:
+                  name: build-artifact
+                  path: ./dist
             - run: yarn install --frozen-lockfile --non-interactive
               working-directory: .
             - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
