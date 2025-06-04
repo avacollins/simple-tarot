@@ -25,7 +25,7 @@ jobs:
         with:
           filters: |
             src:
-              - 'packages/ui/**'
+              - './packages/ui/**'
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -34,8 +34,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
       - run: yarn install --frozen-lockfile --non-interactive
+        working-directory: .
       - run: yarn workspaces run semantic-release -e semantic-release-monorepo
+        working-directory: .
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
@@ -45,6 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: yarn install --frozen-lockfile --non-interactive
+        working-directory: .
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: yarn install
