@@ -1,42 +1,50 @@
 {
-  "name": "simpletarot",
-  "version": "1.0.0",
-  "description": "Simple yet effective tarot reading application",
-  "repository": "git@github.com:avacollins/simple-tarot.git",
-  "author": "Ava Collins <info@avacollins.dev>",
-  "license": "Creative Commons",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "build:types": "tsc -b",
-    "lint": "eslint --ext .ts,.tsx apps packages",
-    "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
-    "ios": "yarn workspace tarot ios",
-    "dev": "yarn workspace admin dev",
-    "storybook": "yarn workspace ui storybook",
-    "build-storybook": "yarn workspace ui build-storybook"
-
-  },
-  "resolutions": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-native": "0.79.2",
-    "react-native-web": "~0.20.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "@storybook/addon-controls": "^9.0.4",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@types/webpack-env": "^1.18.8",
-    "eslint": "^9.28.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-native": "^5.0.0",
-    "npm": "^11.4.1",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.1"
-  }
+    "name": "simpletarot",
+    "version": "1.0.0",
+    "description": "Simple yet effective tarot reading application",
+    "repository": "git@github.com:avacollins/simple-tarot.git",
+    "author": "Ava Collins <info@avacollins.dev>",
+    "license": "Creative Commons",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "build:types": "tsc -b",
+        "lint": "eslint --ext .ts,.tsx apps packages",
+        "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
+        "ios": "yarn workspace tarot ios",
+        "dev": "yarn workspace admin dev",
+        "storybook": "yarn workspace ui storybook",
+        "build-storybook": "yarn workspace ui build-storybook"
+    },
+    "resolutions": {
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+        "react-native": "0.79.2",
+        "react-native-web": "~0.20.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.8.1",
+        "@commitlint/config-conventional": "^19.8.1",
+        "@eslint/js": "^9.28.0",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/npm": "^12.0.1",
+        "@storybook/addon-controls": "^9.0.4",
+        "@storybook/addon-essentials": "^8.6.14",
+        "@types/webpack-env": "^1.18.8",
+        "conventional-changelog-conventionalcommits": "^9.0.0",
+        "eslint": "^9.28.0",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-native": "^5.0.0",
+        "husky": "^9.1.7",
+        "npm": "^11.4.1",
+        "semantic-release": "^24.2.5",
+        "semantic-release-monorepo": "^8.0.2",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.33.1"
+    }
 }
