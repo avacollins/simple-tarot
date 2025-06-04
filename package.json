@@ -16,7 +16,9 @@
     "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
     "ios": "yarn workspace tarot ios",
     "dev": "yarn workspace admin dev",
-    "storybook": "yarn workspace ui storybook"
+    "storybook": "yarn workspace ui storybook",
+    "build-storybook": "yarn workspace ui build-storybook"
+
   },
   "resolutions": {
     "react": "19.0.0",

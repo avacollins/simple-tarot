@@ -9,32 +9,40 @@ const viewHeight = Dimensions.get('window').height;
 
 type BackgroundProps = {
     children: ReactNode;
+    width?: number;
+    height?: number;
 };
 
-const Background = ({ children }: BackgroundProps) => {
+const Background = ({
+    children,
+    width = viewWidth,
+    height = viewHeight
+}: BackgroundProps) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
+            width: width,
             flexDirection: 'row',
-            width: viewWidth,
             justifyContent: 'center',
             alignItems: 'stretch',
-            backgroundColor: colors.silver_sand?.base || '#fff'
+            backgroundColor: colors.silver_sand?.base
         },
         background: {
             position: 'absolute',
+            width: width,
+            height: height,
             left: 0,
             right: 0,
             top: 500,
-            paddingTop: viewHeight - 500,
+            paddingTop: height - 500,
             zIndex: 1
         },
         bottom: {
             position: 'absolute',
             bottom: -500,
-            width: viewWidth,
+            width: width,
             height: 600,
-            backgroundColor: colors.spanish_gray?.base,
+            backgroundColor: colors.silver_sand?.base,
             zIndex: 0
         },
         foreground: {

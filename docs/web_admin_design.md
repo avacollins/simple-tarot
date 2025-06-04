@@ -25,7 +25,6 @@ Technical goals for phase one are to design a new architecture that is maintaina
 - **Reliability**: Automated testing on GitHub actions
 - **Agility**: Dockerize all application to be orchestrated via configurations and docker commands
 
-
 ### Non-Goals
 
 - **Firebase Analytics Integration**: Will not be included in this iteration, a link to the console will be on the Home screen menu
