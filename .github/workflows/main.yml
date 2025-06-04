@@ -29,12 +29,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: yarn install --frozen-lockfile --non-interactive
 
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: yarn install --frozen-lockfile --non-interactive
       - run: yarn workspaces run semantic-release -e semantic-release-monorepo
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
@@ -44,6 +44,7 @@ jobs:
     if: needs.build.outputs.src_changed == 'true'
     runs-on: ubuntu-latest
     steps:
+      - run: yarn install --frozen-lockfile --non-interactive
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: yarn install
