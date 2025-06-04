@@ -11,7 +11,7 @@
         "packages/*"
     ],
     "scripts": {
-        "build:types": "tsc -b",
+        "types": "tsc -b",
         "lint": "eslint --ext .ts,.tsx apps packages",
         "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
         "ios": "yarn workspace tarot ios",
