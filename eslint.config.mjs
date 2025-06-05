@@ -1,6 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 import { FlatCompat } from '@eslint/eslintrc';
@@ -8,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import globals from 'globals';
 import js from '@eslint/js';
 import path from 'node:path';
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
 import tsParser from '@typescript-eslint/parser';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 
@@ -25,6 +24,7 @@ export default defineConfig([
         'apps/admin/.next/**',
         'apps/tarot/.expo/**',
         'packages/ui/.storybook/**',
+         'packages/ui/storybook-static/**',
          'packages/ui/.storybook_server/**',
         'apps/tarot/metro.config.js',
         '**/dist/**',
@@ -226,7 +226,7 @@ export default defineConfig([
             'jsx-quotes': [2, 'prefer-double'],
             'react/display-name': 2,
             'react/forbid-prop-types': 1,
-            'react/jsx-boolean-value': [2, 'always'],
+            'react/jsx-boolean-value': [0, 'always'],
             'react/jsx-closing-bracket-location': 0,
             'react/jsx-curly-spacing': [2, 'never'],
             'react/jsx-equals-spacing': 2,

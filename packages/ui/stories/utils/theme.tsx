@@ -1,5 +1,4 @@
 import colors from './colors';
-// https://reactnativeelements.com/docs/customization
 
 interface ThemeColors {
     background: string;
@@ -22,21 +21,10 @@ interface ThemeColors {
 
 interface Theme {
     colors: ThemeColors;
-    Button: {
-        buttonStyle: {
-            height: number;
-            paddingLeft: number;
-            paddingRight: number;
-        };
-        titleStyle: {
-            color: string;
-            fontWeight: string;
-        };
-    };
+    formWrapperStyle: object;
 }
 
 const fallbackColor = '#ff0000';
-// ...existing code...
 
 const themeColors: ThemeColors = {
     background: colors.spanish_gray?.base ?? fallbackColor,
@@ -48,8 +36,8 @@ const themeColors: ThemeColors = {
     grey1: colors.silver_sand?.base ?? fallbackColor,
     grey2: colors.silver_sand?.muted ?? fallbackColor,
     grey3: colors.spanish_gray?.muted ?? fallbackColor,
-    grey4: colors.spanish_gray?.base ?? fallbackColor,
-    grey5: colors.spanish_gray?.shadow ?? fallbackColor,
+    grey4: colors.spanish_gray?.shadow ?? fallbackColor,
+    grey5: colors.spanish_gray?.dark ?? fallbackColor,
     greyOutline: colors.silver_sand?.muted ?? fallbackColor,
     searchBg: colors.spanish_gray?.light ?? fallbackColor,
     success: colors.medium_aquamarine?.base ?? fallbackColor,
@@ -57,20 +45,13 @@ const themeColors: ThemeColors = {
     error: colors.electric_orange?.base ?? fallbackColor
 };
 
-// ...rest of the code...
-
 const theme = (tc = themeColors): Theme => ({
     colors: themeColors,
-    Button: {
-        buttonStyle: {
-            height: 40,
-            paddingLeft: 20,
-            paddingRight: 20
-        },
-        titleStyle: {
-            color: '#fff',
-            fontWeight: 'bold'
-        }
+    formWrapperStyle: {
+        width: '100%',
+        paddingHorizontal: 50,
+        backgroundColor: tc.grey0,
+        alignItems: 'stretch'
     }
 });
 

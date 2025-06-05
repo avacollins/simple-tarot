@@ -17,5 +17,6 @@
     "exclude": [
         "**/*.js",
         "./.storybook/**",
+        "./storybook-static/**",
     ]
 }
