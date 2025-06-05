@@ -39,6 +39,7 @@ jobs:
             pages: write
             id-token: write
         needs: release
+        if: needs.release.outputs.src_changed == 'true'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
