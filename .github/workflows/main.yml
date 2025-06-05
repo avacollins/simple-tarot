@@ -29,7 +29,10 @@ jobs:
               with:
                   node-version: 20
             - run: yarn install --frozen-lockfile --non-interactive
+              working-directory: .
             - run: yarn workspaces run semantic-release -e semantic-release-monorepo
+              working-directory: .
+
         env:
             GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
