@@ -49,7 +49,7 @@ const theme = (tc = themeColors): Theme => ({
     colors: themeColors,
     formWrapperStyle: {
         width: '100%',
-        paddingHorizontal: 50,
+        paddingHorizontal: 80,
         backgroundColor: tc.grey0,
         alignItems: 'stretch'
     }

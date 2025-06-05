@@ -15,18 +15,6 @@ export const Default: Story = {
     args: {
         onSubmit: (email: string, password: string, confirmPassword: string) => {
             console.log('Submitted:', { email, password, confirmPassword });
-        },
-        error: false
-    }
-};
-export const WithError: Story = {
-    args: {
-        onSubmit: (email: string, password: string, confirmPassword: string) => {
-            console.log('Submitted:', { email, password, confirmPassword });
-        },
-        error: {
-            message: 'Invalid email address',
-            type: 'emailAddress'
         }
     }
 };

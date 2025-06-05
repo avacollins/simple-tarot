@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { ErrorProp } from '../atoms/form-error-text';
 import FormButton from '../atoms/form-button';
+import { FormError } from '../atoms/form-error-text';
 import FormInputRow from '../molecules/form-input-row';
 import { KeyboardType } from 'react-native';
 
@@ -13,31 +13,45 @@ export interface SignupFormProps {
     onPasswordChange: (text: string) => void;
     onConfirmPasswordChange: (text: string) => void;
     onSubmit: () => void;
-    error: ErrorProp['error'];
+    errors: FormError[];
 }
 
 const SignupForm: React.FC<SignupFormProps> = ({
     email,
     password,
     confirmPassword,
-    error,
+    errors,
     onEmailChange,
     onPasswordChange,
     onConfirmPasswordChange,
     onSubmit
 }) => {
-    const [emailError, setEmailError] = useState<ErrorProp['error']>(false);
-    const [passwordError, setPasswordError] = useState<ErrorProp['error']>(false);
-    const [confirmPasswordError, setConfirmPasswordError] =
-        useState<ErrorProp['error']>(false);
+    const [emailError, setEmailError] = useState<FormError | false>(false);
+    const [passwordError, setPasswordError] = useState<FormError | false>(false);
+    const [confirmPasswordError, setConfirmPasswordError] = useState<FormError | false>(
+        false
+    );
 
     useEffect(() => {
-        setEmailError(error !== false && error.type === 'emailAddress' ? error : false);
-        setPasswordError(error !== false && error.type === 'password' ? error : false);
-        setConfirmPasswordError(
-            error !== false && error.type === 'newPassword' ? error : false
-        );
-    }, [error]);
+        if (errors && errors.length === 0) {
+            setEmailError(false);
+            setPasswordError(false);
+            setConfirmPasswordError(false);
+
+            return;
+        }
+        if (errors && errors.length > 0) {
+            const emailErr = errors.find(err => err && err.type === 'emailAddress');
+            const passwordErr = errors.find(err => err && err.type === 'password');
+            const confirmPasswordErr = errors.find(
+                err => err && err.type === 'newPassword'
+            );
+
+            setEmailError(emailErr ? emailErr : false);
+            setPasswordError(passwordErr ? passwordErr : false);
+            setConfirmPasswordError(confirmPasswordErr ? confirmPasswordErr : false);
+        }
+    }, [errors]);
 
     const emailProps = {
         label: 'Email*',
@@ -79,7 +93,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
                 inputProps={confirmPasswordProps}
                 textProps={{ error: confirmPasswordError }}
             />
-            <FormButton buttonLabel="Sign Up" btnEnabled={!error} onPress={onSubmit} />
+            <FormButton
+                buttonLabel="Sign Up"
+                btnEnabled={!emailError && !passwordError && !confirmPasswordError}
+                onPress={onSubmit}
+            />
         </>
     );
 };

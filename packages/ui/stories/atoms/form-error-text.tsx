@@ -3,13 +3,13 @@ import { StyleSheet, Text, TextInputProps } from 'react-native';
 import React from 'react';
 
 export interface ErrorProp {
-    error:
-        | {
-              message: string;
-              type: TextInputProps['textContentType'];
-          }
-        | false;
+    error: FormError | false;
 }
+
+export type FormError = {
+    message: string;
+    type: TextInputProps['textContentType'];
+};
 
 const styles = StyleSheet.create({
     errorText: {

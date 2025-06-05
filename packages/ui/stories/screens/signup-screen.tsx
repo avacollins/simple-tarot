@@ -1,30 +1,36 @@
-import { KeyboardAvoidingView, StyleSheet, TextInputProps, View } from 'react-native';
+import { KeyboardAvoidingView, Text, TextInputProps, View } from 'react-native';
+import React, { useState } from 'react';
 
 import MobileView from '../templates/mobile-view';
-import React from 'react';
 import SignupForm from '../organisms/signup-form';
 import theme from '../utils/theme';
+import { useSignupForm } from '@simpletarot/hooks';
 
 export interface SignupScreenProps {
     onSubmit: (email: string, password: string, confirmPassword: string) => void;
-    error:
-        | {
-              message: string;
-              type: TextInputProps['textContentType'];
-          }
-        | false;
 }
 
 const t = theme();
 
-const SignupScreen: React.FC<SignupScreenProps> = ({ onSubmit, error }) => {
+const SignupScreen: React.FC<SignupScreenProps> = ({ onSubmit }) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
 
-    const handleEmailChange = (text: string) => setEmail(text);
-    const handlePasswordChange = (text: string) => setPassword(text);
-    const handleConfirmPasswordChange = (text: string) => setConfirmPassword(text);
+    const { errors, handleChange, handleSubmit } = useSignupForm();
+
+    const handleEmailChange = (text: string) => {
+        handleChange();
+        setEmail(text);
+    };
+    const handlePasswordChange = (text: string) => {
+        handleChange();
+        setPassword(text);
+    };
+    const handleConfirmPasswordChange = (text: string) => {
+        handleChange();
+        setConfirmPassword(text);
+    };
 
     return (
         <MobileView>
@@ -34,11 +40,16 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onSubmit, error }) => {
                         email={email}
                         password={password}
                         confirmPassword={confirmPassword}
-                        error={error}
+                        errors={errors}
                         onEmailChange={handleEmailChange}
                         onPasswordChange={handlePasswordChange}
                         onConfirmPasswordChange={handleConfirmPasswordChange}
-                        onSubmit={onSubmit.bind(null, email, password, confirmPassword)}
+                        onSubmit={handleSubmit.bind(
+                            null,
+                            email,
+                            password,
+                            confirmPassword
+                        )}
                     />
                 </View>
             </KeyboardAvoidingView>

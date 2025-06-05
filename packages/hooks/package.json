@@ -1,11 +1,12 @@
 {
-  "name": "hooks",
-  "version": "1.0.0",
-  "private": true,
-  "exports": {
-    ".": {
-      "import": "./index.tsx",
-      "types": "./tsconfig.tsbuildinfo"
+    "name": "@simpletarot/hooks",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./index.tsx",
+            "types": "./tsconfig.tsbuildinfo"
+        }
     }
-  }
 }

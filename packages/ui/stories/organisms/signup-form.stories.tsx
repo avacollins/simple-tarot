@@ -15,7 +15,7 @@ export const Default: Story = {
         email: '',
         password: '',
         confirmPassword: '',
-        error: false,
+        errors: [],
         onEmailChange: (text: string) => console.log('Email changed:', text),
         onPasswordChange: (text: string) => console.log('Password changed:', text),
         onConfirmPasswordChange: (text: string) =>
@@ -29,7 +29,7 @@ export const WithEmailError: Story = {
         email: '',
         password: '',
         confirmPassword: '',
-        error: { message: 'Invalid email address', type: 'emailAddress' },
+        errors: [{ message: 'Invalid email address', type: 'emailAddress' }],
         onEmailChange: (text: string) => console.log('Email changed:', text),
         onPasswordChange: (text: string) => console.log('Password changed:', text),
         onConfirmPasswordChange: (text: string) =>
@@ -43,7 +43,12 @@ export const WithPasswordError: Story = {
         email: 'admin@dev.com',
         password: '',
         confirmPassword: '',
-        error: { message: 'Password must be at least 6 characters', type: 'password' },
+        errors: [
+            {
+                message: 'Password must be at least 6 characters',
+                type: 'password'
+            }
+        ],
         onEmailChange: (text: string) => console.log('Email changed:', text),
         onPasswordChange: (text: string) => console.log('Password changed:', text),
         onConfirmPasswordChange: (text: string) =>
@@ -57,7 +62,7 @@ export const WithConfirmPasswordError: Story = {
         email: 'admin@dev.com',
         password: 'password123',
         confirmPassword: 'password1234',
-        error: { message: 'Passwords do not match', type: 'newPassword' },
+        errors: [{ message: 'Passwords do not match', type: 'newPassword' }],
         onEmailChange: (text: string) => console.log('Email changed:', text),
         onPasswordChange: (text: string) => console.log('Password changed:', text),
         onConfirmPasswordChange: (text: string) =>
