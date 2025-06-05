@@ -1,22 +1,16 @@
-import { KeyboardType, StyleSheet } from 'react-native';
+import { KeyboardType, StyleSheet, TextInputProps } from 'react-native';
 
 import { Input } from '@rneui/themed';
 import React from 'react';
-import { View } from 'react-native';
 import colors from '../utils/colors';
 
 export interface FormInputProps {
     label?: string;
     placeholder?: string;
     value?: string;
-    textContentType?:
-        | 'emailAddress'
-        | 'password'
-        | 'username'
-        | 'name'
-        | 'telephoneNumber';
+    textContentType: TextInputProps['textContentType'];
     hasError?: boolean;
-    keyboardType: KeyboardType;
+    keyboardType?: KeyboardType;
     onChangeText?: (text: string) => void;
     disabled?: boolean;
 }
@@ -25,11 +19,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         alignItems: 'stretch'
-    },
-    formRow: {
-        alignItems: 'flex-start',
-        marginTop: 10,
-        marginBottom: 10
     },
     label: {
         color: colors.smoky_black?.base ?? '#000'
@@ -48,7 +37,7 @@ const FormInput: React.FC<FormInputProps> = ({
     value,
     placeholder,
     textContentType,
-    keyboardType,
+    keyboardType = 'default',
     disabled = false
 }) => {
     const inputStyle = hasError
@@ -56,21 +45,19 @@ const FormInput: React.FC<FormInputProps> = ({
         : styles.input;
 
     return (
-        <View style={styles.formRow}>
-            <Input
-                label={label}
-                labelStyle={styles.label}
-                style={inputStyle}
-                onChangeText={onChangeText}
-                value={value}
-                placeholder={placeholder}
-                textContentType={textContentType}
-                autoCapitalize="none"
-                keyboardType={keyboardType}
-                secureTextEntry={textContentType === 'password'}
-                disabled={disabled}
-            />
-        </View>
+        <Input
+            label={label}
+            labelStyle={styles.label}
+            style={inputStyle}
+            onChangeText={onChangeText}
+            value={value}
+            placeholder={placeholder}
+            textContentType={textContentType}
+            autoCapitalize="none"
+            keyboardType={keyboardType}
+            secureTextEntry={textContentType === 'password'}
+            disabled={disabled}
+        />
     );
 };
 

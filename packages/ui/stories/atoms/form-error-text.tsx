@@ -1,11 +1,12 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TextInputProps } from 'react-native';
 
 import React from 'react';
 
-export interface FormErrorTextProps {
+export interface ErrorProp {
     error:
         | {
               message: string;
+              type: TextInputProps['textContentType'];
           }
         | false;
 }
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const FormErrorText: React.FC<FormErrorTextProps> = ({ error }) => (
+const FormErrorText: React.FC<ErrorProp> = ({ error }) => (
     <Text style={styles.errorText}>{error && error?.message}</Text>
 );
 

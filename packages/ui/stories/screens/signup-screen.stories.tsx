@@ -26,7 +26,7 @@ export const WithError: Story = {
         },
         error: {
             message: 'Invalid email address',
-            type: 'email'
+            type: 'emailAddress'
         }
     }
 };

@@ -1,9 +1,9 @@
-import { StyleSheet, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
 
+import { ErrorProp } from '../atoms/form-error-text';
 import FormButton from '../atoms/form-button';
-import FormErrorText from '../atoms/form-error-text';
-import FormInput from '../atoms/form-input';
-import React from 'react';
+import FormInputRow from '../molecules/form-input-row';
+import { KeyboardType } from 'react-native';
 
 export interface SignupFormProps {
     email: string;
@@ -13,12 +13,7 @@ export interface SignupFormProps {
     onPasswordChange: (text: string) => void;
     onConfirmPasswordChange: (text: string) => void;
     onSubmit: () => void;
-    error:
-        | {
-              message: string;
-              type: 'email' | 'password' | 'confirmPassword';
-          }
-        | false;
+    error: ErrorProp['error'];
 }
 
 const SignupForm: React.FC<SignupFormProps> = ({
@@ -30,38 +25,63 @@ const SignupForm: React.FC<SignupFormProps> = ({
     onPasswordChange,
     onConfirmPasswordChange,
     onSubmit
-}) => (
-    <>
-        <FormInput
-            label="Email"
-            placeholder="Enter your email"
-            value={email}
-            textContentType="emailAddress"
-            hasError={error && error.type === 'email'}
-            keyboardType="email-address"
-            onChangeText={onEmailChange}
-        />
-        <FormInput
-            label="Password"
-            placeholder="Enter your password"
-            value={password}
-            textContentType="password"
-            hasError={error && error.type === 'password'}
-            keyboardType="default"
-            onChangeText={onPasswordChange}
-        />
-        <FormInput
-            label="Confirm Password"
-            placeholder="Confirm your password"
-            value={confirmPassword}
-            textContentType="password"
-            hasError={error && error.type === 'confirmPassword'}
-            keyboardType="default"
-            onChangeText={onConfirmPasswordChange}
-        />
-        <FormErrorText error={error} />
-        <FormButton buttonLabel="Sign Up" btnEnabled={!error} onPress={onSubmit} />
-    </>
-);
+}) => {
+    const [emailError, setEmailError] = useState<ErrorProp['error']>(false);
+    const [passwordError, setPasswordError] = useState<ErrorProp['error']>(false);
+    const [confirmPasswordError, setConfirmPasswordError] =
+        useState<ErrorProp['error']>(false);
+
+    useEffect(() => {
+        setEmailError(error !== false && error.type === 'emailAddress' ? error : false);
+        setPasswordError(error !== false && error.type === 'password' ? error : false);
+        setConfirmPasswordError(
+            error !== false && error.type === 'newPassword' ? error : false
+        );
+    }, [error]);
+
+    const emailProps = {
+        label: 'Email*',
+        placeholder: 'Enter your email',
+        value: email,
+        textContentType: 'emailAddress' as const,
+        hasError: !!emailError,
+        onChangeText: onEmailChange
+    };
+
+    const passwordProps = {
+        label: 'Password*',
+        placeholder: 'Enter your password',
+        value: password,
+        textContentType: 'password' as const,
+        hasError: !!passwordError,
+        keyboardType: 'default' as KeyboardType,
+        onChangeText: onPasswordChange
+    };
+
+    const confirmPasswordProps = {
+        label: 'Confirm Password*',
+        placeholder: 'Confirm your password',
+        value: confirmPassword,
+        textContentType: 'password' as const,
+        hasError: !!confirmPasswordError,
+        keyboardType: 'default' as KeyboardType,
+        onChangeText: onConfirmPasswordChange
+    };
+
+    return (
+        <>
+            <FormInputRow inputProps={emailProps} textProps={{ error: emailError }} />
+            <FormInputRow
+                inputProps={passwordProps}
+                textProps={{ error: passwordError }}
+            />
+            <FormInputRow
+                inputProps={confirmPasswordProps}
+                textProps={{ error: confirmPasswordError }}
+            />
+            <FormButton buttonLabel="Sign Up" btnEnabled={!error} onPress={onSubmit} />
+        </>
+    );
+};
 
 export default SignupForm;

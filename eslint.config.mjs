@@ -151,7 +151,7 @@ export default defineConfig([
             'no-octal-escape': 2,
             'no-param-reassign': 2,
             'no-proto': 2,
-            'no-redeclare': 1,
+            'no-redeclare': 0,
             'no-return-assign': 0,
             'no-script-url': 2,
             'no-self-compare': 2,

@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, TextInputProps, View } from 'react-native';
 
 import MobileView from '../templates/mobile-view';
 import React from 'react';
@@ -10,7 +10,7 @@ export interface SignupScreenProps {
     error:
         | {
               message: string;
-              type: 'email' | 'password' | 'confirmPassword';
+              type: TextInputProps['textContentType'];
           }
         | false;
 }
