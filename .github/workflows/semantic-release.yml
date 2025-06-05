@@ -1,0 +1,30 @@
+name: Runs Semantic Release to generate releases and changelogs
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - run: yarn install --frozen-lockfile --non-interactive
+              working-directory: .
+            - run: yarn workspaces run semantic-release -e semantic-release-monorepo
+              working-directory: .
+
+        env:
+            GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
