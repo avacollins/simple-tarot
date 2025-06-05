@@ -6,7 +6,8 @@
         [
             "@semantic-release/npm",
             {
-                "npmPublish": false
+                "npmPublish": false,
+                "pkgRoot": "."
             }
         ],
         ["@semantic-release/git", { "assets": ["CHANGELOG.md", "package.json"] }]

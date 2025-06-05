@@ -18,7 +18,6 @@
     },
     "devDependencies": {
         "@react-native/babel-preset": "^0.79.2",
-        "@storybook/addon-essentials": "^8.6.14",
         "@storybook/addon-onboarding": "^9.0.4",
         "@storybook/addon-react-native-web": "^0.0.29",
         "@storybook/react": "^9.0.4",
