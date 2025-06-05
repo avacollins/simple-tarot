@@ -6,13 +6,12 @@ on:
             - main
     workflow_dispatch:
 
-permissions:
-    contents: write
-    pages: write
-    id-token: write
-
 jobs:
     release:
+        permissions:
+            contents: write
+            pages: write
+            id-token: write
         runs-on: ubuntu-latest
         outputs:
             src_changed: ${{ steps.filter.outputs.src }}
@@ -35,8 +34,11 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
     deploy:
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
         needs: release
-        if: needs.release.outputs.src_changed == 'true'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -45,8 +47,9 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
-            - run: yarn install --frozen-lockfile --non-interactive
             - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
               with:
                   install_command: yarn install
                   build_command: yarn build-storybook
+                  path: './packages/ui/storybook-static'
+                  checkout: false
