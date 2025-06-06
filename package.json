@@ -11,11 +11,14 @@
         "packages/*"
     ],
     "scripts": {
-        "types": "tsc -b",
+        "api:build": "yarn workspace api build",
+        "api:dev": "yarn workspace api dev",
+        "api:start": "yarn workspace api start",
+        "admin:dev": "yarn workspace admin dev",
+        "build": "yarn lint:fix && yarn workspaces run tsc -b",
         "lint": "eslint --ext .ts,.tsx apps packages",
         "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
-        "ios": "yarn workspace tarot ios",
-        "dev": "yarn workspace admin dev",
+        "tarot:ios": "yarn workspace tarot ios",
         "storybook": "yarn workspace @simpletarot/ui storybook",
         "build-storybook": "yarn workspace @simpletarot/ui build-storybook"
     },

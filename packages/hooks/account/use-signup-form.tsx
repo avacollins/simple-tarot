@@ -4,10 +4,14 @@ import { FormError } from '@simpletarot/ui';
 import React from 'react';
 
 export interface useSignUpFormProps {
-    submit: (email, password) => void;
+    errors: FormError[];
+    handleChange: () => void;
+    handleSubmit: (email: string, password: string, confirmPassword: string) => void;
 }
 
-const useSignUpForm = (submit): useSignUpFormProps => {
+const useSignUpForm = (
+    submit: (emailAddress: string, password: string) => void
+): useSignUpFormProps => {
     const [errors, setErrors] = React.useState<FormError[]>([]);
 
     const handleChange = () => {
