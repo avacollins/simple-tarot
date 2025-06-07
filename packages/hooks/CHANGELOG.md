@@ -1,3 +1,11 @@
+# [@simpletarot/hooks-v1.1.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.0.0...@simpletarot/hooks-v1.1.0) (2025-06-07)
+
+
+### Features
+
+* adds api node server base ([848bf08](https://github.com/avacollins/simple-tarot/commit/848bf08c6b5cfa1d3c9deafcccc8cffd27abcdc3))
+* adds useAvatarImage hook and mdx docs  to Atoms/AvatarImage story ([a137043](https://github.com/avacollins/simple-tarot/commit/a137043c5c29d315d99bb46a1f10af4244d392de))
+
 # @simpletarot/hooks-v1.0.0 (2025-06-05)
 
 
