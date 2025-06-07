@@ -7,7 +7,7 @@ import theme from '../utils/theme';
 import { useSignupForm } from '@simpletarot/hooks';
 
 export interface SignupScreenProps {
-    onSubmit: (email: string, password: string, confirmPassword: string) => void;
+    onSubmit: (emailAddress: string, password: string) => void;
 }
 
 const t = theme();
@@ -17,7 +17,7 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onSubmit }) => {
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
 
-    const { errors, handleChange, handleSubmit } = useSignupForm();
+    const { errors, handleChange, handleSubmit } = useSignupForm(onSubmit);
 
     const handleEmailChange = (text: string) => {
         handleChange();

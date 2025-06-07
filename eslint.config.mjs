@@ -27,7 +27,7 @@ export default defineConfig([
          'packages/ui/storybook-static/**',
          'packages/ui/.storybook_server/**',
         'apps/tarot/metro.config.js',
-        '**/dist/**',
+        'apps/api/dist/**',
         '**/node_modules/**',
         '**/*.mjs',
         '**/assets/**'

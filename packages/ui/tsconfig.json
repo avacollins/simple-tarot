@@ -12,7 +12,8 @@
     "include": [
         "**/*.ts",
         "**/*.tsx",
-        "../hooks/style/colors.ts"
+        "../hooks/style/colors.ts",
+        "stories/**/*.mdx"
     ],
     "exclude": [
         "**/*.js",

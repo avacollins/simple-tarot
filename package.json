@@ -18,7 +18,7 @@
         "build": "yarn lint:fix && yarn workspaces run tsc -b",
         "lint": "eslint --ext .ts,.tsx apps packages",
         "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
-        "tarot:ios": "yarn workspace tarot ios",
+        "ios": "yarn workspace tarot ios",
         "storybook": "yarn workspace @simpletarot/ui storybook",
         "build-storybook": "yarn workspace @simpletarot/ui build-storybook"
     },
