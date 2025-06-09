@@ -1,7 +1,6 @@
 import { AvatarConfig, useAvatarImage } from '@simpletarot/hooks';
 import React, { useEffect } from 'react';
 
-import { A } from 'storybook/internal/components';
 import { Avatar } from '@rneui/themed';
 
 type AvatarImageProps = {
@@ -12,16 +11,16 @@ type AvatarImageProps = {
 const AvatarImage: React.FC<AvatarImageProps> = ({ size = 'xlarge', saved }) => {
     const { avatarImage, error, getNewAvatarImage, getAvatarImage, saveAvatarImage } =
         useAvatarImage();
-
+    const [hasSaved, setHasSaved] = React.useState<boolean>(
+        saved !== undefined && saved !== ''
+    );
     const [displayImage, setDisplayImage] = React.useState<string | undefined>();
 
     useEffect(() => {
-        if (saved !== undefined && saved !== '') {
+        if (hasSaved) {
             setDisplayImage(saved);
-
-            return;
         }
-        if (avatarImage !== undefined && avatarImage !== '') {
+        if (!hasSaved && avatarImage !== undefined && avatarImage !== '') {
             setDisplayImage(avatarImage);
         }
 
@@ -36,13 +35,18 @@ const AvatarImage: React.FC<AvatarImageProps> = ({ size = 'xlarge', saved }) => 
         }
     }, [saved, avatarImage, displayImage]);
 
+    const onPressAvatar = async () => {
+        setHasSaved(false);
+        getNewAvatarImage();
+    };
+
     return (
         <Avatar
             size={size}
             rounded
             source={{ uri: displayImage }}
             containerStyle={{ margin: 10, borderColor: 'black', borderWidth: 1 }}
-            onPress={getNewAvatarImage}
+            onPress={onPressAvatar}
             onLongPress={saveAvatarImage}
         />
     );
