@@ -8,6 +8,8 @@ Simple Tarot is a tarot card reading app that is a rebuild of an [existing appli
 
 Currently in Development: Mobile Design Phase One, [see the design doc](./docs/mobile_design_pahse_one.md)
 
+Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
+
 ## Architectural Documents
 
 👉🏽 Check out 
@@ -26,7 +28,6 @@ Currently in Development: Mobile Design Phase One, [see the design doc](./docs/m
 
  - [Web Admin Design Document Phase One WIP](./docs/web_admin_design.md)
 
- - [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
 
  # Copyright
 

@@ -14,6 +14,8 @@
         "api:build": "yarn workspace api build",
         "api:dev": "yarn workspace api dev",
         "api:start": "yarn workspace api start",
+        "docker-build": "docker build -t api .",
+        "docker-run": "docker run -p 3000:3000 api",
         "admin:dev": "yarn workspace admin dev",
         "build": "yarn lint:fix && yarn workspaces run tsc -b",
         "lint": "eslint --ext .ts,.tsx apps packages",
