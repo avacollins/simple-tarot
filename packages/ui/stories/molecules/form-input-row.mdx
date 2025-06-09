@@ -1,0 +1,15 @@
+import { Story } from '@storybook/addon-docs';
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as FormInputRowStories from './form-input-row.stories';
+
+<Meta of={FormInputRowStories} />
+
+# FormInputRow Component
+
+## Overview
+
+Wraps the display of text form input and error text in a padded row layout. Passes props directly to the input component, no state management is done here.
+
+<Canvas of={FormInputRowStories.WithError}/>
+

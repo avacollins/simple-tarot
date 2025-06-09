@@ -1,0 +1,13 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import * as SignupFormStories from './signup-form.stories';
+
+<Meta of={SignupFormStories} />
+
+# SignupForm Component
+
+## Overview
+
+The SignupForm component manages the form state for the multiple inputs. It uses the `useSignupForm` hook to handle form submission and validation. 
+The form includes fields for email, password, and confirm password, with appropriate client side validation.
+
+<Canvas of={SignupFormStories.WithEmailError} />

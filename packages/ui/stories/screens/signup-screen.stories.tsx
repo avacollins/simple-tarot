@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import mdx from './signup-screen.mdx';
 
 import React from 'react';
 import SignupScreen from './signup-screen';
@@ -9,10 +10,7 @@ const meta = {
     parameters: {
         layout: 'padded',
         docs: {
-            description: {
-                component:
-                    'A screen for user registration, allowing users to sign up with an email and password.'
-            }
+            page: mdx
         },
         globals: {
             viewport: { value: 'iphone14pro', isRotated: false }

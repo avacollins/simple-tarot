@@ -18,6 +18,12 @@ Uses the hook `useAvatarImage` to get the image URL and other properties from th
 
 ## State
 
+- `hasSaved`: Initializes to evaluation of `saved` prop; it will only be set on component load or if `saved` prop changes.
+- `displayImage`: The image url being displayed in the component view. If the avatar image is pressed and a new image appears it is only set in
+the component `displayImage` state. If continue to press the image will continue to change the image URL.
+- `useAvatarImage`: Hook that fetches the image URL from the core-api; 
+`    returns { avatarImage, error, getAvatarImage, getNewAvatarImage, saveAvatarImage };`
+
 <img src="/avatar-image-display-state.png" alt="AvatarImage display state" width="600"/>
 
 

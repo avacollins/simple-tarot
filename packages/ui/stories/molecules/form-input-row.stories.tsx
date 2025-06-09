@@ -1,11 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
-
+import mdx from './form-input-row.mdx';
 import FormInputRow from './form-input-row';
 import React from 'react';
 
 const meta = {
     title: 'Molecules/FormInputRow',
-    component: FormInputRow
+    component: FormInputRow,
+    parameters: {
+        docs: {
+            page: mdx
+        }
+    }
 } satisfies Meta<typeof FormInputRow>;
 
 export default meta;

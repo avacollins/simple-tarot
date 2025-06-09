@@ -17,7 +17,12 @@ const styles = StyleSheet.create({
 
 const meta = {
     title: 'Atoms/Background',
-    component: Background
+    component: Background,
+    parameters: {
+        docs: {
+            disable: true
+        }
+    }
 } satisfies Meta<typeof Background>;
 
 export default meta;

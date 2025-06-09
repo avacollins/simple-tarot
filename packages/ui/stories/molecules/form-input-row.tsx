@@ -17,15 +17,11 @@ const styles = StyleSheet.create({
     }
 });
 
-const FormInputRow: React.FC<FormInputRowProps> = ({ inputProps, textProps }) => {
-    console.log('FormInputRow', inputProps, textProps);
-
-    return (
-        <View style={styles.formRow}>
-            <FormInput {...inputProps} />
-            <FormErrorText error={textProps.error} />
-        </View>
-    );
-};
+const FormInputRow: React.FC<FormInputRowProps> = ({ inputProps, textProps }) => (
+    <View style={styles.formRow}>
+        <FormInput {...inputProps} />
+        <FormErrorText error={textProps.error} />
+    </View>
+);
 
 export default FormInputRow;

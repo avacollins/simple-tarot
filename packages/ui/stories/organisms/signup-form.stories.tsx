@@ -1,10 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
 import SignupForm from './signup-form';
+import mdx from './signup-form.mdx';
 import React from 'react';
 
 const meta = {
     title: 'Organisms/SignupForm',
-    component: SignupForm
+    component: SignupForm,
+    parameters: {
+        docs: {
+            page: mdx
+        }
+    }
 } satisfies Meta<typeof SignupForm>;
 
 export default meta;

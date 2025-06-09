@@ -1,4 +1,4 @@
-import { validateEmail, validatePassword } from './validators';
+import { errorMessages, validateEmail, validatePassword } from './validators';
 
 import { FormError } from '@simpletarot/ui';
 import React from 'react';
@@ -23,21 +23,15 @@ const useSignUpForm = (
         const newErrors: FormError[] = [];
 
         if (!validateEmail(email)) {
-            newErrors.push({ message: 'Invalid email address', type: 'emailAddress' });
+            newErrors.push(errorMessages.INVALID_EMAIL as FormError);
         }
 
         if (!validatePassword(password)) {
-            newErrors.push({
-                message: 'Password must be at least 6 characters',
-                type: 'password'
-            });
+            newErrors.push(errorMessages.PASSWORD_TOO_SHORT as FormError);
         }
 
         if (password !== confirmPassword) {
-            newErrors.push({
-                message: 'Passwords do not match',
-                type: 'newPassword'
-            });
+            newErrors.push(errorMessages.PASSWORD_MISMATCH as FormError);
         }
         if (newErrors.length > 0) {
             valid = false;
