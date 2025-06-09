@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.1.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.0...@simpletarot/ui-v1.1.1) (2025-06-09)
+
+
+### Bug Fixes
+
+* **ui:** add link to hosted image on avatar image docs ([0d07a78](https://github.com/avacollins/simple-tarot/commit/0d07a78de8662bc2f0dc414e992b8cb261ac7993))
+
 # [@simpletarot/ui-v1.1.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.0.0...@simpletarot/ui-v1.1.0) (2025-06-07)
 
 
