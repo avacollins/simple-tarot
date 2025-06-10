@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.1.5](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.4...@simpletarot/ui-v1.1.5) (2025-06-10)
+
+
+### Bug Fixes
+
+* typo ([d9ed719](https://github.com/avacollins/simple-tarot/commit/d9ed7194e86ce1c6a0ab22048dd3d3d7fe649d7d))
+
 # [@simpletarot/ui-v1.1.4](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.3...@simpletarot/ui-v1.1.4) (2025-06-10)
 
 
