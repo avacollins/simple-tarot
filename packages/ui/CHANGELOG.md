@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.1.3](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.2...@simpletarot/ui-v1.1.3) (2025-06-10)
+
+
+### Bug Fixes
+
+* **ui:** fix import on signup screen stories ([38cf7df](https://github.com/avacollins/simple-tarot/commit/38cf7df7714faed394e6081e847006c93bd424c8))
+
 # [@simpletarot/ui-v1.1.2](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.1...@simpletarot/ui-v1.1.2) (2025-06-09)
 
 
