@@ -13,6 +13,6 @@ RUN yarn api:build
 
 WORKDIR /app/apps/api
 
-EXPOSE 3000
+EXPOSE 3443
 
 CMD ["node", "dist/server.js"]

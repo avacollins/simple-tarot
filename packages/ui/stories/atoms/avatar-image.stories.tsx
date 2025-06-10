@@ -55,7 +55,7 @@ export const Primary: Story = {
     parameters: {
         msw: {
             handlers: [
-                http.get('http://localhost:3000', () => HttpResponse.json(mockData))
+                http.get('https://localhost:3443', () => HttpResponse.json(mockData))
             ]
         }
     }
@@ -69,7 +69,7 @@ export const Saved: Story = {
     parameters: {
         msw: {
             handlers: [
-                http.get('http://localhost:3000', () => HttpResponse.json(mockData))
+                http.get('https://localhost:3443', () => HttpResponse.json(mockData))
             ]
         }
     }

@@ -15,7 +15,7 @@ const useAvatarImage = () => {
     const fetchNewImage = async () => {
         try {
             // eslint-disable-next-line no-undef
-            const response = await fetch('http://localhost:3000/');
+            const response = await fetch('https://localhost:3443/');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

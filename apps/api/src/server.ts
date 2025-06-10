@@ -1,13 +1,24 @@
-import http, { IncomingMessage, ServerResponse } from 'http';
-
 import dotenv from 'dotenv';
+import fs from 'fs';
 import { getJson } from 'serpapi';
+import https from 'https';
+import path from 'path';
 
 dotenv.config();
 
-const server = http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
-    // Set CORS headers
-    const allowed_domain = '*'; // Adjust with your domain or localhost port
+// Read SSL certificate and key
+const sslOptions = {
+    key: process.env.KEY_PEM
+        ? fs.readFileSync(process.env.KEY_PEM)
+        : fs.readFileSync('ssl/key.pem'),
+    cert: process.env.CERT_PEM
+        ? fs.readFileSync(process.env.CERT_PEM)
+        : fs.readFileSync('ssl/cert.pem')
+};
+
+const allowed_domain = '*'; // Adjust with your domain or localhost port
+
+const server = https.createServer(sslOptions, async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', allowed_domain);
     res.setHeader('Access-Control-Allow-Methods', 'GET');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -41,7 +52,7 @@ const server = http.createServer(async (req: IncomingMessage, res: ServerRespons
     }
 });
 
-const port = 3000;
+const port = 3443;
 server.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`HTTPS server running at https://localhost:${port}`);
 });
