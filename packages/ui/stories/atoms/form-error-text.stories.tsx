@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import FormErrorText from './form-error-text';
 import React from 'react';
 

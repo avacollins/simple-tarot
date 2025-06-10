@@ -1,4 +1,4 @@
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react-native-web-vite';
 import FormInput from './form-input';
 import React from 'react';
 import { KeyboardTypeOptions } from 'react-native';

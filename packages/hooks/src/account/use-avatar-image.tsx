@@ -12,25 +12,30 @@ const useAvatarImage = () => {
 
     useEffect(() => {}, []);
 
-    const getNewAvatarImage = async () => {
-        // eslint-disable-next-line no-undef
-        fetch('http://localhost:3000/')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+    const fetchNewImage = async () => {
+        try {
+            // eslint-disable-next-line no-undef
+            const response = await fetch('http://localhost:3000/');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-                return response.json();
-            })
-            .then(data => {
-                if (data && data.length > 0) {
-                    const randomIndex = Math.floor(Math.random() * data.length);
-                    setAvatarImage(data[randomIndex].thumbnail);
-                }
-            })
-            .catch(err => {
-                setError(err instanceof Error ? err.message : 'Unknown error');
-            });
+            return await response.json();
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Unknown error');
+
+            return [];
+        }
+    };
+
+    const getNewAvatarImage = async () => {
+        try {
+            const response = await fetchNewImage();
+            const randomIndex = Math.floor(Math.random() * response.length);
+            setAvatarImage(response[randomIndex].thumbnail);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Unknown error');
+        }
     };
 
     const getAvatarImage = () => avatarImage;

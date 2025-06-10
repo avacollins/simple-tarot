@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import mdx from './signup-screen.mdx';
 
 import React from 'react';
