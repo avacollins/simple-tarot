@@ -29,6 +29,7 @@ export default defineConfig([
         'apps/tarot/metro.config.js',
         'apps/api/dist/**',
         '**/node_modules/**',
+        '**/dist/**',
         '**/*.mjs',
         '**/assets/**'
       ]
