@@ -1,3 +1,3 @@
-export { default as useSignupForm } from './account/use-signup-form';
-export { default as useAvatarImage } from './account/use-avatar-image';
-export * from './account/use-avatar-image';
+export { default as useSignupForm } from './src/account/use-signup-form';
+export { default as useAvatarImage } from './src/account/use-avatar-image';
+export * from './src/account/use-avatar-image';

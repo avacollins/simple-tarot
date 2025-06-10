@@ -3,12 +3,8 @@
     "version": "1.1.0",
     "private": true,
     "type": "module",
-    "exports": {
-        ".": {
-            "import": "./index.tsx",
-            "types": "./tsconfig.tsbuildinfo"
-        }
-    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "dependencies": {
         "serpapi": "^2.1.0"
     }
