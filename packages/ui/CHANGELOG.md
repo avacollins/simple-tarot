@@ -1,3 +1,11 @@
+# [@simpletarot/ui-v1.1.4](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.3...@simpletarot/ui-v1.1.4) (2025-06-10)
+
+
+### Bug Fixes
+
+* closes [#6](https://github.com/avacollins/simple-tarot/issues/6) remove fetch-mock use msw to mock fetch requests ([d5be70e](https://github.com/avacollins/simple-tarot/commit/d5be70ea44a6a7d7861f98b39ba166a975c71e74))
+* remove fetch-mock addon ([dda626a](https://github.com/avacollins/simple-tarot/commit/dda626a589e4337de8f6fb9a1df2edb4a302652e))
+
 # [@simpletarot/ui-v1.1.3](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.2...@simpletarot/ui-v1.1.3) (2025-06-10)
 
 
