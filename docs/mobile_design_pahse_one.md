@@ -45,13 +45,16 @@ Phase One will include
 
 ### Container Diagrams
 
-![File Based Routing](../assets/file_based_routing.png)
 
 ![Core API](../assets/core_api_system.png)
 
 ![UI Library](../assets/component_library.png)
 
+![File Based Routing](../assets/file_based_routing.png)
 
+### Graph Schema
+
+![Graph Schema](../assets/graph-schema.png)
 
 ### Architectural Style
 
@@ -80,8 +83,8 @@ Phase One will include
 
 ## 5. Alternatives Considered
 
-1. **Apollo DB**: Neo4J best suited for future needs
-2. **Auroa DB deployment**: AWS container deployment also suites future requirements better
+1. **MemGraph DB**: Prefer Neo4J
+2. **Auroa DB**: Paid product not necessary
 
 ## 6. Timeline
 
@@ -92,16 +95,16 @@ Phase One will include
 
 ### Phase 2: Initial Development (June 2025 - July 2025)
 
-- Set up yarn workspace and application file based routing
-- Create UI packages using Storybook UI
-- Migrate data and client libraries to use Neo4J
-- Implement UI screens into application code
+- [x] Set up yarn workspace and application file based routing
+- [ ] Implement UI packages in Storybook
+- [ ] Migrate data and client libraries to use Neo4J
+- [ ] Implement UI screens into application code
 
 ### Phase 4: Testing and Deployment (August 2025)
 
-- Perform comprehensive end-to-end testing
-- Deploy Graph DB to AWS
-- Deploy App to EAS
+- [ ] Perform comprehensive end-to-end testing
+- [ ] Deploy Graph DB to AWS
+- [ ] Deploy App to EAS
 
 ## 7. Risks and Open Questions
 
