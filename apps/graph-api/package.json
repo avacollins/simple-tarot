@@ -1,0 +1,29 @@
+{
+    "name": "graph-api",
+    "version": "1.0.0",
+    "private": true,
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "compile": "tsc",
+        "dev": "ts-node-dev --respawn ./src/index.ts",
+        "start": "npm run compile && nodemon ./dist/index.js"
+    },
+    "dependencies": {
+        "@apollo/server": "^4.12.2",
+        "@neo4j/graphql": "^7.2.0",
+        "@parcel/watcher": "^2.4.0",
+        "concurrently": "^9.1.2",
+        "graphql": "^16.11.0",
+        "graphql-tag": "^2.12.6",
+        "neo4j-driver": "^5.28.1"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.1",
+        "concurrently": "^8.2.2",
+        "nodemon": "^3.0.0",
+        "ts-node": "^10.9.1",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.0.0"
+    }
+}

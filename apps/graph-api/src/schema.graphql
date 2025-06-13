@@ -1,0 +1,26 @@
+type Suite {
+    name: String!
+    elements: String!
+    zodiac: [String]
+    dominion: String
+    path: String
+    decant: String
+}
+
+type Card {
+    name: String!
+    title: String!
+    image: String!
+    description: String!
+    numeral: String!
+    index: Int!
+    keywords: [String!]!
+    reversedKeywords: [String!]!
+    color: String
+}
+
+type Query {
+    suites: [Suite!]!
+    cards(suite: String!): [Card!]!
+    card(name: String!): Card
+}
