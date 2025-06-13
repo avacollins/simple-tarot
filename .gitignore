@@ -1,5 +1,8 @@
 ssl
 
+# apps/neo4j
+data
+
 # Logs
 logs
 *.log

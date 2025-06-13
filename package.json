@@ -14,10 +14,16 @@
         "api:build": "yarn workspace api build",
         "api:dev": "yarn workspace api dev",
         "api:start": "yarn workspace api start",
-        "docker-build": "docker build -t api .",
-        "docker-run": "docker run -p 3443:3443 api",
+        "api:docker-build": "docker build -t api .",
+        "api:docker-run": "docker run -p 3443:3443 api",
+        "api:docker-stop": "docker stop api && docker rm api",
         "admin:dev": "yarn workspace admin dev",
         "build": "yarn lint:fix && yarn workspaces run tsc -b",
+        "graph:dev": "yarn workspace graph-api dev",
+        "graph:build": "yarn workspace graph-api build",
+        "graph:start": "yarn workspace graph-api start",
+        "run-db": "yarn workspace graph-api run-db",
+        "stop-db": "yarn workspace graph-api stop-db",
         "lint": "eslint --ext .ts,.tsx apps packages",
         "lint:fix": "eslint --ext .ts,.tsx apps packages --fix",
         "ios": "yarn workspace tarot ios",
@@ -26,12 +32,14 @@
         "storybook-static": "npx http-server ./packages/ui/storybook-static"
     },
     "resolutions": {
-        "react": "19.0.0",
-        "react-dom": "19.0.0",
-        "react-native": "0.79.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-native": "0.79.3",
         "react-native-web": "~0.20.0",
         "storybook": "^9.0.4",
-        "ts-node": "^10.9.2"
+        "ts-node": "^10.9.2",
+        "@types/node": "^24.0.1",
+        "@types/react": "^19.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",

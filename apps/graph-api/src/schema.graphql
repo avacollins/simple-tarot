@@ -1,0 +1,17 @@
+type Suite @node {
+    name: String!
+    element: String!
+    zodiac: [String!]!
+    dominion: String
+}
+
+type Card @node {
+    name: String!
+    title: String!
+    image: String!
+    description: String!
+    numeral: String!
+    index: Int!
+    keywords: [String!]!
+    reversedKeywords: [String!]!
+}
