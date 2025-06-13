@@ -5,25 +5,24 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "compile": "tsc",
-        "dev": "ts-node-dev --respawn ./src/index.ts",
-        "start": "npm run compile && nodemon ./dist/index.js"
+        "build": "rm -rf ./dist && tsc",
+        "start": "node dist/index.js",
+        "dev": "nodemon --exec node -r ts-node/register --env-file=.env ./src/index.ts",
+        "run-db": "docker run --name graph --restart always --env-file=.db.env -p 7474:7474 -p 7687:7687 -v $(pwd)/data:/data -d neo4j:2025.05.0",
+        "stop-db": "docker stop graph && docker rm graph"
     },
     "dependencies": {
         "@apollo/server": "^4.12.2",
         "@neo4j/graphql": "^7.2.0",
-        "@parcel/watcher": "^2.4.0",
-        "concurrently": "^9.1.2",
         "graphql": "^16.11.0",
         "graphql-tag": "^2.12.6",
         "neo4j-driver": "^5.28.1"
     },
     "devDependencies": {
         "@types/node": "^24.0.1",
-        "concurrently": "^8.2.2",
-        "nodemon": "^3.0.0",
-        "ts-node": "^10.9.1",
+        "nodemon": "^3.1.10",
+        "ts-node": "^10.9.2",
         "ts-node-dev": "^2.0.0",
-        "typescript": "^5.0.0"
+        "typescript": "^5.8.3"
     }
 }
