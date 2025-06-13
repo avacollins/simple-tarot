@@ -1,3 +1,10 @@
+# [admin-v1.1.0](https://github.com/avacollins/simple-tarot/compare/admin-v1.0.0...admin-v1.1.0) (2025-06-13)
+
+
+### Features
+
+* Apollo Server and Neo4j ([#8](https://github.com/avacollins/simple-tarot/issues/8)) ([89aaeb1](https://github.com/avacollins/simple-tarot/commit/89aaeb1533d3ca0349b68c620130161178469e08))
+
 # admin-v1.0.0 (2025-06-05)
 
 
