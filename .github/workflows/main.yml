@@ -10,53 +10,52 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
-            - uses: actions/setup-node@v3
+            - uses: actions/setup-node@v4
               with:
                   node-version: 20
+                  cache: 'yarn'
             - run: yarn install --frozen-lockfile --non-interactive
-              working-directory: .
             - run: yarn build
-            - uses: actions/upload-artifact@v3
+            - name: 'Tar files'
+              run: tar -cvf workspace.tar ./
+            - uses: actions/upload-artifact@v4
               with:
                   name: workspace
-                  path: ./
-    storybook:
-        runs-on: ubuntu-latest
-        needs: build
-        steps:
-            - uses: actions/download-artifact@v3
-              with:
-                  name: workspace
-            - name: Check if directory has changes
-              id: directory_changes_checker
-              uses: georgeneto/directory-changes-checker@v1
-              with:
-                  repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  directory: './packages/ui'
-            - name: Build storybook-static
-              if: ${{ steps.directory_changes_checker.outputs.hasChanges == 'true' }}
-              uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-              with:
-                  install_command: yarn install
-                  build_command: yarn build-storybook
-                  path: './packages/ui/storybook-static'
-                  checkout: false
+                  path: workspace.tar
     release:
         runs-on: ubuntu-latest
         needs: build
         permissions:
             contents: write
-            pages: write
             id-token: write
+            pages: write
         steps:
-            - uses: actions/download-artifact@v3
+            - uses: actions/download-artifact@v4
               with:
                   name: workspace
+            - name: Extract artifact
+              run: |
+                  tar -xvf workspace.tar
             - run: yarn workspaces run semantic-release -e semantic-release-monorepo
-              working-directory: .
 
         env:
             GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+    publish:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - uses: actions/download-artifact@v4
+              with:
+                  name: workspace
+            - name: Extract artifact
+              run: |
+                  tar -xvf workspace.tar
+            - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+              with:
+                  install_command: yarn install
+                  build_command: yarn build-storybook
+                  path: './packages/ui/storybook-static'
+                  checkout: false
