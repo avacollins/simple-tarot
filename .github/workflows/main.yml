@@ -1,0 +1,37 @@
+name: Runs Semantic Release to generate releases and changelogs and Builds the Storybook Doccs
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - run: yarn install --frozen-lockfile --non-interactive
+              working-directory: .
+            - run: yarn build
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: workspace
+                  path: ./
+    release:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - uses: actions/download-artifact@v4
+              with:
+                  name: workspace
+            - run: yarn workspaces run semantic-release -e semantic-release-monorepo
+              working-directory: .
+
+        env:
+            GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
