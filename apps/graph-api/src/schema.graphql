@@ -1,17 +1,18 @@
 type Suite @node {
-    name: String!
-    element: String!
-    zodiac: [String!]!
     dominion: String
+    element: String!
+    name: String!
+    zodiac: [String!]!
 }
 
 type Card @node {
-    name: String!
-    title: String!
-    image: String!
     description: String!
-    numeral: String!
+    image: String!
     index: Int!
     keywords: [String!]!
+    name: String!
+    numeral: String!
     reversedKeywords: [String!]!
+    title: String!
+    suit: String!
 }
