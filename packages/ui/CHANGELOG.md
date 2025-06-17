@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.1.6](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.5...@simpletarot/ui-v1.1.6) (2025-06-17)
+
+
+### Bug Fixes
+
+* ci: typo in host url ([283c3c7](https://github.com/avacollins/simple-tarot/commit/283c3c73e3a42671e9bdbe969a2430075e2070f5))
+
 # [@simpletarot/ui-v1.1.5](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.4...@simpletarot/ui-v1.1.5) (2025-06-10)
 
 
