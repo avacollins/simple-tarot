@@ -1,3 +1,10 @@
+# [@simpletarot/hooks-v1.2.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.1.1...@simpletarot/hooks-v1.2.0) (2025-06-17)
+
+
+### Features
+
+* adds useLoginForm hook, LoginForm and LoginScreen components ([e0ea0d0](https://github.com/avacollins/simple-tarot/commit/e0ea0d021b7337ccc5802b721bbe2a658df6294f))
+
 # [@simpletarot/hooks-v1.1.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.1.0...@simpletarot/hooks-v1.1.1) (2025-06-10)
 
 
