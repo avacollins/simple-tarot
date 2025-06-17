@@ -1,3 +1,15 @@
+# [@simpletarot/ui-v1.2.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.6...@simpletarot/ui-v1.2.0) (2025-06-17)
+
+
+### Bug Fixes
+
+* **ui:** import meta as default ([0bcd3ac](https://github.com/avacollins/simple-tarot/commit/0bcd3ac36bd8a166318dd14ff0d9ef6fdea289f5))
+
+
+### Features
+
+* adds useLoginForm hook, LoginForm and LoginScreen components ([e0ea0d0](https://github.com/avacollins/simple-tarot/commit/e0ea0d021b7337ccc5802b721bbe2a658df6294f))
+
 # [@simpletarot/ui-v1.1.6](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.1.5...@simpletarot/ui-v1.1.6) (2025-06-17)
 
 
