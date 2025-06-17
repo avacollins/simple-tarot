@@ -1,0 +1,12 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as LoginFormStories from './login-form.stories';
+
+<Meta of={LoginFormStories.default} />
+
+# LoginForm Component
+
+## Overview
+
+The form component includes fields for email and password with appropriate client side validation.
+
+<Canvas of={LoginFormStories.WithError} />

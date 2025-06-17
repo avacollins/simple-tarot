@@ -1,0 +1,12 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as LoginScreenStories from './login-screen.stories';
+
+<Meta of={LoginScreenStories.default} />
+
+# SignupScreen Component
+
+## Overview
+The LoginScreen component is a full-screen layout that includes the LoginForm component. 
+LoginScreen uses the `useLoginForm` hook to manage form state and client side validation.
+
+<Canvas of={LoginScreenStories.Default} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { ErrorProp } from '../atoms/form-error-text';
 import FormButton from '../atoms/form-button';
+import { FormError } from '../atoms/form-error-text';
 import FormInputRow from '../molecules/form-input-row';
 import { KeyboardType } from 'react-native';
 
@@ -11,24 +11,35 @@ export interface LoginFormProps {
     onEmailChange: (text: string) => void;
     onPasswordChange: (text: string) => void;
     onSubmit: () => void;
-    error: ErrorProp['error'];
+    errors: FormError[];
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({
     email,
     password,
-    error,
+    errors,
     onEmailChange,
     onPasswordChange,
     onSubmit
 }) => {
-    const [emailError, setEmailError] = useState<ErrorProp['error']>(false);
-    const [passwordError, setPasswordError] = useState<ErrorProp['error']>(false);
+    const [emailError, setEmailError] = useState<FormError | false>(false);
+    const [passwordError, setPasswordError] = useState<FormError | false>(false);
 
     useEffect(() => {
-        setEmailError(error !== false && error.type === 'emailAddress' ? error : false);
-        setPasswordError(error !== false && error.type === 'password' ? error : false);
-    }, [error]);
+        if (errors && errors.length === 0) {
+            setEmailError(false);
+            setPasswordError(false);
+
+            return;
+        }
+        if (errors && errors.length > 0) {
+            const emailErr = errors.find(err => err && err.type === 'emailAddress');
+            const passwordErr = errors.find(err => err && err.type === 'password');
+
+            setEmailError(emailErr ? emailErr : false);
+            setPasswordError(passwordErr ? passwordErr : false);
+        }
+    }, [errors]);
 
     const emailProps = {
         label: 'Email*',
@@ -57,7 +68,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 inputProps={passwordProps}
                 textProps={{ error: passwordError }}
             />
-            <FormButton buttonLabel="Login" onPress={onSubmit} btnEnabled={!error} />
+            <FormButton
+                buttonLabel="Login"
+                onPress={onSubmit}
+                btnEnabled={errors && errors.length === 0}
+            />
         </>
     );
 };
