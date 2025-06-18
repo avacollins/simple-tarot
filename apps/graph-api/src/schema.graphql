@@ -14,5 +14,13 @@ type Card @node {
     numeral: String!
     reversedKeywords: [String!]!
     title: String!
-    suit: String!
+    type: String!
+}
+
+type AvatarImage {
+    thumbnail: String!
+}
+
+type Query {
+    avatarImages: [AvatarImage!]!
 }

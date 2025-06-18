@@ -13,12 +13,17 @@
     },
     "dependencies": {
         "@apollo/server": "^4.12.2",
+        "@as-integrations/express5": "^1.1.0",
         "@neo4j/graphql": "^7.2.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
         "graphql": "^16.11.0",
         "graphql-tag": "^2.12.6",
         "neo4j-driver": "^5.28.1"
     },
     "devDependencies": {
+        "@types/cors": "^2.8.19",
         "@types/node": "^24.0.1",
         "nodemon": "^3.1.10",
         "ts-node": "^10.9.2",
