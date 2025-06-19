@@ -3,6 +3,7 @@ import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import { AvatarImageAPI } from './datasources/avatar-image-api';
 import { Neo4jGraphQL } from '@neo4j/graphql';
+import bodyparser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -80,7 +81,7 @@ if (serverConfig.ssl) {
         app.use(
             graphqlPath,
             cors<cors.CorsRequest>({ origin: '*' }),
-            express.json(),
+            bodyparser.json(),
             expressMiddleware(server, {
                 context: async ({ req }) => {
                     return {
@@ -94,10 +95,7 @@ if (serverConfig.ssl) {
         );
 
         await new Promise<void>(resolve =>
-            httpServer.listen(
-                { port: serverConfig.port, host: serverConfig.hostname },
-                resolve
-            )
+            httpServer.listen({ port: serverConfig.port }, resolve)
         );
 
         console.log(
