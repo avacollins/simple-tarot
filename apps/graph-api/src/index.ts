@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import { AvatarImageAPI } from './datasources/avatar-image-api';
@@ -7,6 +8,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import { expressMiddleware } from '@as-integrations/express5';
 import { gql } from 'graphql-tag';
+import http from 'http';
 import https from 'https';
 import neo4j from 'neo4j-driver';
 import path from 'path';
@@ -15,14 +17,24 @@ import { resolvers } from './resolvers';
 
 dotenv.config();
 
-const sslOptions = {
-    key: process.env.KEY_PEM
-        ? readFileSync(process.env.KEY_PEM)
-        : readFileSync('ssl/key.pem'),
-    cert: process.env.CERT_PEM
-        ? readFileSync(process.env.CERT_PEM)
-        : readFileSync('ssl/cert.pem')
+const configurations = {
+    production: {
+        ssl: true,
+        port: process.env.PROD_PORT || 443,
+        hostname: process.env.PROD_HOSTNAME || '192.168.4.156'
+    },
+    development: {
+        ssl: false,
+        port: process.env.DEV_PORT || 4000,
+        hostname: process.env.DEV_HOST
+    }
 };
+
+type Environment = keyof typeof configurations;
+const environment: Environment =
+    process.env.NODE_ENV === 'development' ? 'development' : 'production';
+
+const serverConfig = configurations[environment];
 
 const typeDefs = gql(
     readFileSync(path.resolve(__dirname, './schema.graphql'), {
@@ -39,21 +51,28 @@ const driver = neo4j.driver(NEO4J_URL, neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWO
 const neoSchema = new Neo4jGraphQL({ typeDefs, resolvers, driver });
 const app = express();
 
-const httpsServer = https.createServer(sslOptions, app);
-
-const serverConfig = {
-    host: process.env.HOST || '127.0.0.1',
-    port: process.env.PORT ? Number(process.env.PORT) : 3443
-};
-
 const graphqlPath = process.env.GRAPHQL_ENDPOINT || '/graphql';
+
+let httpServer;
+if (serverConfig.ssl) {
+    httpServer = https.createServer(
+        {
+            key: readFileSync(`./ssl/${environment}/key.pem`),
+            cert: readFileSync(`./ssl/${environment}/cert.pem`)
+        },
+
+        app
+    );
+} else {
+    httpServer = http.createServer(app);
+}
 
 (async () => {
     try {
         const schema = await neoSchema.getSchema();
         const server = new ApolloServer({
             schema,
-            plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpsServer })]
+            plugins: [ApolloServerPluginDrainHttpServer({ httpServer: httpServer })]
         });
 
         await server.start();
@@ -64,11 +83,9 @@ const graphqlPath = process.env.GRAPHQL_ENDPOINT || '/graphql';
             express.json(),
             expressMiddleware(server, {
                 context: async ({ req }) => {
-                    const { cache } = server;
-
                     return {
                         dataSources: {
-                            avatarImageAPI: new AvatarImageAPI({ cache })
+                            avatarImageAPI: new AvatarImageAPI()
                         },
                         req
                     };
@@ -76,10 +93,17 @@ const graphqlPath = process.env.GRAPHQL_ENDPOINT || '/graphql';
             })
         );
 
-        await new Promise<void>(resolve => httpsServer.listen(serverConfig, resolve));
+        await new Promise<void>(resolve =>
+            httpServer.listen(
+                { port: serverConfig.port, host: serverConfig.hostname },
+                resolve
+            )
+        );
 
         console.log(
-            `🚀 Server ready at https://${serverConfig.host}:${serverConfig.port}${graphqlPath}`
+            `🚀 Server ready at ${serverConfig.ssl === true ? ' https' : 'http'}://${
+                serverConfig.hostname
+            }:${serverConfig.port}${graphqlPath}`
         );
     } catch (error) {
         console.error('Error creating schema:', error);
