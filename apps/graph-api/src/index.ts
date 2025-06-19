@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
+import { AvatarImageAPI } from './datasources/avatar-image-api';
 import { Neo4jGraphQL } from '@neo4j/graphql';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -10,6 +11,7 @@ import https from 'https';
 import neo4j from 'neo4j-driver';
 import path from 'path';
 import { readFileSync } from 'fs';
+import { resolvers } from './resolvers';
 
 dotenv.config();
 
@@ -34,7 +36,7 @@ const NEO4J_PASSWORD = process.env.NEO4J_AUTH_PASSWORD || 'password';
 
 const driver = neo4j.driver(NEO4J_URL, neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD));
 
-const neoSchema = new Neo4jGraphQL({ typeDefs, driver });
+const neoSchema = new Neo4jGraphQL({ typeDefs, resolvers, driver });
 const app = express();
 
 const httpsServer = https.createServer(sslOptions, app);
@@ -61,7 +63,16 @@ const graphqlPath = process.env.GRAPHQL_ENDPOINT || '/graphql';
             cors<cors.CorsRequest>({ origin: '*' }),
             express.json(),
             expressMiddleware(server, {
-                context: async ({ req }) => req
+                context: async ({ req }) => {
+                    const { cache } = server;
+
+                    return {
+                        dataSources: {
+                            avatarImageAPI: new AvatarImageAPI({ cache })
+                        },
+                        req
+                    };
+                }
             })
         );
 

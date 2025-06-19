@@ -21,17 +21,19 @@ const compat = new FlatCompat({
 export default defineConfig([
     {
       ignores: [
+        '**/*.mjs',
+        '**/assets/**',
+        '**/dist/**',
+        '**/node_modules/**',
+        '**/public/**',
         'apps/admin/.next/**',
+        'apps/graph-api/codegen.ts',
+        'apps/graph-api/src/types.ts',
         'apps/tarot/.expo/**',
+        'apps/tarot/metro.config.js',
+        'packages/ui/.storybook_server/**',
         'packages/ui/.storybook/**',
         'packages/ui/storybook-static/**',
-        'packages/ui/.storybook_server/**',
-        'apps/tarot/metro.config.js',
-        '**/public/**',
-        '**/node_modules/**',
-        '**/dist/**',
-        '**/*.mjs',
-        '**/assets/**'
       ]
     },
     {
