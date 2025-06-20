@@ -1,4 +1,4 @@
-import DisplayCardNames from './DisplayCardNames';
+import { DisplayCardNames } from '@simpletarot/ui';
 import React from 'react';
 import { View } from 'react-native';
 
