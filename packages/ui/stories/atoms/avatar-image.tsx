@@ -23,13 +23,6 @@ const AvatarImage: React.FC<AvatarImageProps> = ({ size = 'xlarge', saved }) => 
         if (!hasSaved && avatarImage !== undefined && avatarImage !== '') {
             setDisplayImage(avatarImage);
         }
-
-        // const updateAvatarImage = async () => {
-        //     await getNewAvatarImage();
-        //     const newImage = getAvatarImage();
-        //     setDisplayImage(newImage);
-        // };
-
         if (displayImage === AvatarConfig.DEFAULT_AVATAR_IMAGE) {
             getAvatarImage();
         }
