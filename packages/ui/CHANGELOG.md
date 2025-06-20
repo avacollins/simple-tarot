@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.3.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.3.0...@simpletarot/ui-v1.3.1) (2025-06-20)
+
+
+### Bug Fixes
+
+* **ui:** Fixes static storybook deployment on gh pages ([#11](https://github.com/avacollins/simple-tarot/issues/11)) ([c44f864](https://github.com/avacollins/simple-tarot/commit/c44f864e06f425ae9351ec4b7dfdbd29e1b75615))
+
 # [@simpletarot/ui-v1.3.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.2.0...@simpletarot/ui-v1.3.0) (2025-06-20)
 
 
