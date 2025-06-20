@@ -1,4 +1,3 @@
-import { HttpResponse, delay, http } from 'msw';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
@@ -31,21 +30,6 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i
             }
-        },
-        msw: {
-            handlers: [
-                http.all('http://localhost:4000/graphql', () =>
-                    HttpResponse.json(
-                        {},
-                        {
-                            status: 200,
-                            headers: {
-                                'Access-Control-Allow-Origin': '*'
-                            }
-                        }
-                    )
-                )
-            ]
         }
     },
     globalTypes: {},
