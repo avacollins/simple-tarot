@@ -45,7 +45,6 @@ const useAvatarImage = () => {
     };
 
     const getNewAvatarImage = () => {
-        console.log(`Getting new avatar images ${images.length}`);
         const randomIndex = Math.floor(Math.random() * data.avatarImages.length);
         setAvatarImage(images[randomIndex] ?? AvatarConfig.DEFAULT_AVATAR_IMAGE);
     };
