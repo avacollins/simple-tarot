@@ -27,14 +27,14 @@
     },
     "resolutions": {
         "graphql": "^16.11.0",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-native": "0.79.3",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+        "react-native": "0.79.4",
         "react-native-web": "~0.20.0",
         "storybook": "^9.0.4",
         "ts-node": "^10.9.2",
         "@types/node": "^24.0.1",
-        "@types/react": "^19.0.0"
+        "@types/react": "~19.0.10"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
