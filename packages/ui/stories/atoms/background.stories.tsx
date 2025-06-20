@@ -22,7 +22,8 @@ const meta = {
         docs: {
             disable: true
         }
-    }
+    },
+    tags: ['!autodocs']
 } satisfies Meta<typeof Background>;
 
 export default meta;

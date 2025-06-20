@@ -22,7 +22,7 @@
         "lint": "eslint --ext .ts,.tsx apps packages",
         "run-db": "yarn workspace graph-api run-db",
         "stop-db": "yarn workspace graph-api stop-db",
-        "storybook-static": "npx http-server ./packages/ui/storybook-static",
+        "storybook-static": "npx http-server -S true -C ./ssl/development/cert.pem -K ./ssl/development/key.pem ./packages/ui/storybook-static",
         "storybook": "yarn workspace @simpletarot/ui storybook"
     },
     "resolutions": {

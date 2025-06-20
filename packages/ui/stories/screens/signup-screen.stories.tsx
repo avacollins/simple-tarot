@@ -12,9 +12,7 @@ const meta = {
         docs: {
             page: mdx
         },
-        globals: {
-            viewport: { value: 'iphone14pro', isRotated: false }
-        }
+        viewport: { value: 'iphone14pro', isRotated: false }
     }
 } satisfies Meta<typeof SignupScreen>;
 

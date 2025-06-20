@@ -7,9 +7,7 @@ const meta = {
     component: LoginScreen,
     parameters: {
         layout: 'padded',
-        globals: {
-            viewport: { value: 'iphone14pro', isRotated: false }
-        },
+        viewport: { value: 'iphone14pro', isRotated: false },
         docs: {
             page: mdx
         }

@@ -13,11 +13,11 @@
         "**/*.ts",
         "**/*.tsx",
         "../hooks/style/colors.ts",
-        "stories/**/*.mdx"
+        "stories/**/*.mdx",
     ],
     "exclude": [
         "**/*.js",
-        "./.storybook/**",
         "./storybook-static/**",
+        "./.storybook/**"
     ]
 }

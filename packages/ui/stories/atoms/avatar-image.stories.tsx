@@ -2,9 +2,8 @@ import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import mdx from './avatar-image.mdx';
 import AvatarImage from './avatar-image';
 import React from 'react';
-import { http, HttpResponse, delay } from 'msw';
-import MobileProviders from '../templates/mobile-providers';
 import { avatarImagesMock } from '../mocks/avatarImages';
+import { graphql, HttpResponse } from 'msw';
 
 const meta = {
     title: 'Atoms/Avatar',
@@ -15,21 +14,14 @@ const meta = {
         },
         msw: {
             handlers: [
-                http.post('http://localhost:4000/graphql', () =>
+                graphql.query('AvatarImages', () =>
                     HttpResponse.json(avatarImagesMock, {
                         status: 200
                     })
                 )
             ]
         }
-    },
-    decorators: [
-        Story => (
-            <MobileProviders env={{ GRAPH_URI: 'http://localhost:4000/graphql' }}>
-                <Story />
-            </MobileProviders>
-        )
-    ]
+    }
 } satisfies Meta<typeof AvatarImage>;
 
 export default meta;
