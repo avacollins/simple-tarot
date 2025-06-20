@@ -1,8 +1,9 @@
-import { HttpResponse, delay, http } from 'msw';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import type { Preview } from '@storybook/react-native-web-vite';
+import React from 'react';
 
 let options = {};
 if (location.hostname === 'avacollins.github.io') {
@@ -22,6 +23,19 @@ initialize(options);
  */
 
 const preview: Preview = {
+    decorators: [
+        (Story: React.FC) => {
+            const mockClient = new ApolloClient({
+                uri: '/graphql',
+                cache: new InMemoryCache()
+            });
+            return (
+                <ApolloProvider client={mockClient}>
+                    <Story />
+                </ApolloProvider>
+            );
+        }
+    ],
     parameters: {
         viewport: {
             options: INITIAL_VIEWPORTS
@@ -31,21 +45,6 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i
             }
-        },
-        msw: {
-            handlers: [
-                http.all('http://localhost:4000/graphql', () =>
-                    HttpResponse.json(
-                        {},
-                        {
-                            status: 200,
-                            headers: {
-                                'Access-Control-Allow-Origin': '*'
-                            }
-                        }
-                    )
-                )
-            ]
         }
     },
     globalTypes: {},

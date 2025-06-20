@@ -1,19 +1,33 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import DisplayCardNames from './display-card-names';
-import MobileProviders from '../templates/mobile-providers';
+import { cardNamesMock } from '..//mocks/cardNames';
 import React from 'react';
+import { graphql, HttpResponse } from 'msw';
 
 const meta = {
     title: 'Molecules/DisplayCardNames',
     component: DisplayCardNames,
-    decorators: [
-        Story => (
-            <MobileProviders env={{ GRAPH_URI: 'http://localhost:4000/graphql' }}>
-                <Story />
-            </MobileProviders>
-        )
-    ]
+    parameters: {
+        docs: {
+            page: () => (
+                <div>
+                    <h1>Display Card Names</h1>
+                    <p>A Test component for apollo client.</p>
+                </div>
+            )
+        },
+        msw: {
+            handlers: [
+                graphql.query('GetCardNames', () =>
+                    HttpResponse.json(cardNamesMock, {
+                        status: 200
+                    })
+                )
+            ]
+        }
+    },
+    tags: ['!autodocs']
 } satisfies Meta<typeof DisplayCardNames>;
 
 export default meta;
