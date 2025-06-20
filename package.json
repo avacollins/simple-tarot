@@ -12,12 +12,6 @@
     ],
     "scripts": {
         "admin:dev": "yarn workspace admin dev",
-        "api:build": "yarn workspace api build",
-        "api:dev": "yarn workspace api dev",
-        "api:docker-build": "docker build -t api .",
-        "api:docker-run": "docker run -p 3443:3443 api",
-        "api:docker-stop": "docker stop api && docker rm api",
-        "api:start": "yarn workspace api start",
         "build-storybook": "yarn workspace @simpletarot/ui build-storybook",
         "build": "yarn lint:fix && yarn workspaces run tsc -b",
         "graph:build": "yarn workspace graph-api build",
@@ -32,14 +26,15 @@
         "storybook": "yarn workspace @simpletarot/ui storybook"
     },
     "resolutions": {
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-native": "0.79.3",
+        "graphql": "^16.11.0",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+        "react-native": "0.79.4",
         "react-native-web": "~0.20.0",
         "storybook": "^9.0.4",
         "ts-node": "^10.9.2",
         "@types/node": "^24.0.1",
-        "@types/react": "^19.0.0"
+        "@types/react": "~19.0.10"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",

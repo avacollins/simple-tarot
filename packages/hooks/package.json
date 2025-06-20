@@ -5,7 +5,5 @@
     "type": "module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "dependencies": {
-        "serpapi": "^2.1.0"
-    }
+    "dependencies": {}
 }

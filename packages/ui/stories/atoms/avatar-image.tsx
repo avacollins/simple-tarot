@@ -9,7 +9,7 @@ type AvatarImageProps = {
 };
 
 const AvatarImage: React.FC<AvatarImageProps> = ({ size = 'xlarge', saved }) => {
-    const { avatarImage, error, getNewAvatarImage, getAvatarImage, saveAvatarImage } =
+    const { avatarImage, getNewAvatarImage, getAvatarImage, saveAvatarImage } =
         useAvatarImage();
     const [hasSaved, setHasSaved] = React.useState<boolean>(
         saved !== undefined && saved !== ''
@@ -23,19 +23,12 @@ const AvatarImage: React.FC<AvatarImageProps> = ({ size = 'xlarge', saved }) => 
         if (!hasSaved && avatarImage !== undefined && avatarImage !== '') {
             setDisplayImage(avatarImage);
         }
-
-        const updateAvatarImage = async () => {
-            await getNewAvatarImage();
-            const newImage = getAvatarImage();
-            setDisplayImage(newImage);
-        };
-
         if (displayImage === AvatarConfig.DEFAULT_AVATAR_IMAGE) {
-            updateAvatarImage();
+            getAvatarImage();
         }
     }, [saved, avatarImage, displayImage]);
 
-    const onPressAvatar = async () => {
+    const onPressAvatar = () => {
         setHasSaved(false);
         getNewAvatarImage();
     };
