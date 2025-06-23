@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.5.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.4.0...@simpletarot/ui-v1.5.0) (2025-06-23)
+
+
+### Features
+
+* Adds user account screen, updates docs and tests on other account components ([92093d5](https://github.com/avacollins/simple-tarot/commit/92093d534b6a1e7ae9a0df5468e526311d7c9a14))
+
 # [@simpletarot/ui-v1.4.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.3.1...@simpletarot/ui-v1.4.0) (2025-06-23)
 
 
