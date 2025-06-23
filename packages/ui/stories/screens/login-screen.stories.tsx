@@ -24,11 +24,3 @@ export const Default: Story = {
         }
     }
 };
-
-export const WithErrors: Story = {
-    args: {
-        onSubmit: (emailAddress: string, password: string) => {
-            console.log('Submitted with errors:', { emailAddress, password });
-        }
-    }
-};
