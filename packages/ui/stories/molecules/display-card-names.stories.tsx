@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 
 import DisplayCardNames from './display-card-names';
 import { cardNamesMock } from '../tests/mocks/cardNames';

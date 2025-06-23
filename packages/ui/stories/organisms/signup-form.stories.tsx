@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import SignupForm from './signup-form';
 import mdx from './signup-form.mdx';
 import React from 'react';

@@ -1,10 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import React from 'react';
-import LoginScreen from './login-screen';
-import mdx from './login-screen.mdx';
+import ForgotPasswordScreen from './forgot-password-screen';
+import mdx from './forgot-password-screen.mdx';
+
 const meta = {
-    title: 'Screens/LoginScreen',
-    component: LoginScreen,
+    title: 'Screens/ForgotPasswordScreen',
+    component: ForgotPasswordScreen,
     parameters: {
         layout: 'padded',
         viewport: { value: 'iphone14pro', isRotated: false },
@@ -12,23 +13,23 @@ const meta = {
             page: mdx
         }
     }
-} satisfies Meta<typeof LoginScreen>;
+} satisfies Meta<typeof ForgotPasswordScreen>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        onSubmit: (emailAddress: string, password: string) => {
-            console.log('Submitted:', { emailAddress, password });
+        onSubmit: (emailAddress: string) => {
+            console.log('Submitted:', { emailAddress });
         }
     }
 };
 
 export const WithErrors: Story = {
     args: {
-        onSubmit: (emailAddress: string, password: string) => {
-            console.log('Submitted with errors:', { emailAddress, password });
+        onSubmit: (emailAddress: string) => {
+            console.log('Submitted with errors:', { emailAddress });
         }
     }
 };

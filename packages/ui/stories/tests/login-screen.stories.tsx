@@ -3,33 +3,27 @@ import { expect } from 'storybook/test';
 import { errorMessages } from '@simpletarot/hooks';
 
 import React from 'react';
-import SignupScreen from '../screens/signup-screen';
-
+import LoginScreen from '../screens/login-screen';
 const meta = {
-    title: 'Screens/SignupScreen',
-    component: SignupScreen,
+    title: 'Screens/LoginScreen',
+    component: LoginScreen,
     parameters: {
         layout: 'padded',
         viewport: { value: 'iphone14pro', isRotated: false }
     }
-} satisfies Meta<typeof SignupScreen>;
+} satisfies Meta<typeof LoginScreen>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ConfirmPasswordTest = {
+export const InvalidEmailTest = {
     args: {
         onSubmit: (emailAddress: string, password: string) => {
             console.log('Submitted:', { emailAddress, password });
         }
     },
     play: async ({ canvas, userEvent }) => {
-        await userEvent.type(
-            canvas.getByPlaceholderText('Enter your email'),
-            'test@test.com'
-        );
-
-        await userEvent.type(canvas.getByPlaceholderText('Enter your password'), 'pass');
+        await userEvent.type(canvas.getByPlaceholderText('Enter your email'), 'test');
 
         await userEvent.type(
             canvas.getByPlaceholderText('Enter your password'),
@@ -40,8 +34,6 @@ export const ConfirmPasswordTest = {
         await userEvent.click(LoginBtn);
 
         await expect(LoginBtn).toBeDisabled();
-        await expect(
-            canvas.getByText(errorMessages.PASSWORD_MISMATCH.message)
-        ).toBeVisible();
+        await expect(canvas.getByText(errorMessages.INVALID_EMAIL.message)).toBeVisible();
     }
 };
