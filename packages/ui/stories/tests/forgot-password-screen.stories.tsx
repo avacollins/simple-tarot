@@ -23,15 +23,31 @@ export const InvalidEmailTest = {
             console.log('Submitted:', { emailAddress, password });
         }
     },
-    play: async ({ canvas, userEvent }) => {
-        await userEvent.type(
-            canvas.getByPlaceholderText('Enter your email'),
-            'test@test'
-        );
-        const SubmitBtn = canvas.getByRole('button');
-        await userEvent.click(SubmitBtn);
+    play: async ({ canvas, userEvent, step }) => {
+        await step('Enter email', async () => {
+            await userEvent.type(
+                canvas.getByPlaceholderText('Enter your email'),
+                'test@test'
+            );
+        });
 
-        await expect(SubmitBtn).toBeDisabled();
-        await expect(canvas.getByText(errorMessages.INVALID_EMAIL.message)).toBeVisible();
+        const SubmitBtn = canvas.getByRole('button');
+        await step('Click submit button', async () => {
+            await userEvent.click(SubmitBtn);
+        });
+
+        await step('Check for error message', async () => {
+            await expect(SubmitBtn).toBeDisabled();
+            await expect(
+                canvas.getByText(errorMessages.INVALID_EMAIL.message)
+            ).toBeVisible();
+        });
+
+        await step('Correct email check button is enabled', async () => {
+            await userEvent.clear(
+                canvas.getByPlaceholderText('Enter your email', 'test@test.com')
+            );
+            await expect(SubmitBtn).toBeEnabled();
+        });
     }
 };

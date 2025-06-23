@@ -3,10 +3,36 @@ import * as LoginScreenStories from './login-screen.stories';
 
 <Meta of={LoginScreenStories.default} />
 
-# LoginScreen Component
+# Login Screen
 
 ## Overview
-The LoginScreen component is a full-screen layout that includes the LoginForm component. 
-LoginScreen uses the `useLoginForm` hook to manage form state and client side validation.
+- Wraps the LoginForm component in a full-screen Mobile Keyboard Avoiding View.
+- Uses the `useLoginForm` hook to manage form state and client side validation.
 
-<Canvas of={LoginScreenStories.Default} />
+## Props
+- `onSubmit`: Function to handle form submission, which sends the email and password to the
+
+## State
+- `email`: The email address entered by the user.
+- `password`: The password entered by the user.
+
+## Interaction Tests
+
+### Invalid Email Test
+- Checks if the form displays an error message when an invalid email address is entered.
+- Verifies that the submit button is disabled when there are validation errors.
+- Ensures that the submit button is enabled when email address input updates.
+
+### Invalid Password Test
+- Checks if the form displays an error message when the password is less than 6 characters.
+- Verifies that the submit button is disabled when there are validation errors.
+- Ensures that the submit button is enabled when password input updates.
+
+## Future Enhancements
+
+- Server side form validation will be add after UI library is implemented.
+ 
+    - `errors` prop will be updated to include server validation errors to match the UI library prop types.
+ 
+    - The hooks package will be updated to integrate specific features and tests will be created.
+

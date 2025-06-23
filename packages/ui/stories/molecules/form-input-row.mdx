@@ -8,7 +8,16 @@ import * as FormInputRowStories from './form-input-row.stories';
 
 ## Overview
 
-Wraps the display of text form input and error text in a padded row layout. Passes props directly to the input component, no state management is done here.
+Wraps the display of text form input and error text in a padded row layout. 
+
+
+## Props
+- `inputProps`: Props to pass to the input component.
+- `textProps`: Props to pass to the text component for displaying error messages.
+
+
+## State
+
+No state management is done in this component. It passes props through to the input and text components for required state management
 
 <Canvas of={FormInputRowStories.WithError}/>
-

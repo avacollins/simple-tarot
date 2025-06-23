@@ -4,18 +4,14 @@ import DisplayCardNames from './display-card-names';
 import { cardNamesMock } from '../tests/mocks/cardNames';
 import React from 'react';
 import { graphql, HttpResponse } from 'msw';
+import mdx from './display-card-names.mdx';
 
 const meta = {
     title: 'Molecules/DisplayCardNames',
     component: DisplayCardNames,
     parameters: {
         docs: {
-            page: () => (
-                <div>
-                    <h1>Display Card Names</h1>
-                    <p>A Test component for apollo client.</p>
-                </div>
-            )
+            page: mdx
         },
         msw: {
             handlers: [
@@ -26,8 +22,7 @@ const meta = {
                 )
             ]
         }
-    },
-    tags: ['!autodocs']
+    }
 } satisfies Meta<typeof DisplayCardNames>;
 
 export default meta;

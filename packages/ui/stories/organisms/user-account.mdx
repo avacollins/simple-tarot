@@ -1,0 +1,32 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as UserAccountStories from './user-account.stories';
+
+<Meta of={UserAccountStories.default} title='AvatarImage'/>
+
+# AvatarImage Component
+
+## Overview
+
+- User account component that displays user information and allows logout. 
+- Non Anonymous users can send themselves a password reset email.
+- Anonymous users see their anonymous email and password.
+
+
+
+## Props
+- `useremail`: The email address of the user.
+
+## State
+
+- `isAnon`: Boolean indicating if the user is anonymous.
+
+<Canvas of={UserAccountStories.Default} />
+
+### Future Enhancements
+
+- Non Anonymous users can change their email address.
+- Anonymous users can take ownership of their account by changing the email.
+
+<Canvas of={UserAccountStories.Anonymous} />
+
+

@@ -9,4 +9,19 @@ import * as LoginFormStories from './login-form.stories';
 
 The form component includes fields for email and password with appropriate client side validation.
 
+
+## Props
+
+- `email`: The email address entered by the user.
+- `password`: The password entered by the user.
+- `errors`: Array of error messages related to the email and password fields.
+- `onSubmit`: Function to handle form submission, which sends the email and password to the server for authentication.
+- `onEmailChange`: Function to handle changes in the email input field.
+- `onPasswordChange`: Function to handle changes in the password input field.
+
+## State
+
+- `emailError`: Sets component error state based on `errors` prop.
+- `passwordError`: Sets component error state based on `errors` prop.
+
 <Canvas of={LoginFormStories.WithError} />

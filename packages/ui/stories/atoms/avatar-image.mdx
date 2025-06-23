@@ -17,6 +17,11 @@ Uses the hook `useAvatarImage` to get the image URL and other properties from th
 
 <Canvas of={AvatarImageStories.Primary} />
 
+## Props
+
+- `size`: Size of the avatar image, default is `xlarge`.
+- `saved`: Boolean prop to indicate if the image is saved or not. If true, the image will load from saved url and not fetch a random one from the core-api.
+
 ## State
 
 - `hasSaved`: Initializes to evaluation of `saved` prop; it will only be set on component load or if `saved` prop changes.
@@ -28,4 +33,7 @@ the component `displayImage` state. If continue to press the image will continue
 <img src={(location.hostname === 'avacollins.github.io'? `/simple-tarot/avatar-image-display-state.png`: '/avatar-image-display-state.png')} alt="AvatarImage display state" width="600"/>
 
 
+## Future Enhancements
 
+- UX treatment to inform user of the press to generate new image feature.
+- Add functionality to save the image URL to user profile on long press.
