@@ -50,11 +50,11 @@ Accepted
 
 ## Context
 
-Both apps will need to employ a library for application state management. React Redux is a known standard and works well on both mobile and web.
+Both apps will need to employ apollo client for data fetching from core-api as well as application state management and caching.
 
 ## Decision
 
-React Redux will be used to manage global state in both apps.
+Apollo Client in both apps for state management and cache.
 
 ## Consequences
 

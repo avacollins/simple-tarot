@@ -77,8 +77,8 @@ Phase One will include
 
 ### Technology Stack
 
-- **Frontend**: React Native, TypeScript, Redux, Storybook UI, Next
-- **Backend**: Node, Neo4J
+- **Frontend**: React Native, TypeScript, Apollo Client Storybook UI, Next
+- **Backend**: Node/Express, Neo4J, Apollo Server
 - **Deployment**: Docker, AWS, Expo
 
 ## 5. Alternatives Considered
