@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import DisplayCardNames from './display-card-names';
-import { cardNamesMock } from '../../mocks/cardNames';
+import { cardNamesMock } from '../tests/mocks/cardNames';
 import React from 'react';
 import { graphql, HttpResponse } from 'msw';
 

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-native-web-vite';
 import mdx from './avatar-image.mdx';
 import AvatarImage from './avatar-image';
 import React from 'react';
-import { avatarImagesMock } from '../../mocks/avatarImages';
+import { avatarImagesMock } from '../tests/mocks/avatarImages';
 import { graphql, HttpResponse } from 'msw';
 
 const meta = {
