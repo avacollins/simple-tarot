@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.4.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.3.1...@simpletarot/ui-v1.4.0) (2025-06-23)
+
+
+### Features
+
+* Adds forgot passowrd form, screen and tests ([46c621e](https://github.com/avacollins/simple-tarot/commit/46c621e0c8f01666a36903d5d3597e7dac592583))
+
 # [@simpletarot/ui-v1.3.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.3.0...@simpletarot/ui-v1.3.1) (2025-06-20)
 
 
