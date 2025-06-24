@@ -1,8 +1,15 @@
-# Simple Tarot Project Spec
+# Simple Tarot Project
 
 ## Overview
 
 Simple Tarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content generation using an LLM.
+
+## Status
+
+Currently in Development: Mobile Design Phase One, [see the design doc](./docs/mobile_design_pahse_one.md)
+
+Live Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
+
 
 ## Contents
 
@@ -21,11 +28,11 @@ A yarn workspace monorepository to manage shared React Native component librarie
 `packages/ui` is a shared package written in React Native using Storybook UI for building, documenting, testing and exporting UI components.
 
 
-## Status
+## Github Actions
 
-Currently in Development: Mobile Design Phase One, [see the design doc](./docs/mobile_design_pahse_one.md)
+[Build, Release and Deploy](https://github.com/avacollins/simple-tarot/actions/workflows/sb.yml) storybook UI static web application, then deploys [Storybook UI Component Library](https://avacollins.github.io/simple-tarot) to Github Pages.
 
-Live Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
+[Runs Semantic Release to generate releases and changelogs](https://github.com/avacollins/simple-tarot/actions/workflows/semantic-release.yml) name says it all.
 
 ## Docs
 
