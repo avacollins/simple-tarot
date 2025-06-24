@@ -4,6 +4,7 @@ import { initialize, mswLoader } from 'msw-storybook-addon';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import type { Preview } from '@storybook/react-native-web-vite';
 import React from 'react';
+import { typePolicies } from '@simpletarot/hooks';
 
 let options = {};
 if (location.hostname === 'avacollins.github.io') {
@@ -27,7 +28,8 @@ const preview: Preview = {
         (Story: React.FC) => {
             const mockClient = new ApolloClient({
                 uri: '/graphql',
-                cache: new InMemoryCache()
+                cache: new InMemoryCache(typePolicies),
+                connectToDevTools: true
             });
             return (
                 <ApolloProvider client={mockClient}>

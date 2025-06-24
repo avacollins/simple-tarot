@@ -49,7 +49,7 @@ Phase One will include
 
 - **Micro Frontend Architecture**: Add builds from Storybook and Apollo GraphQL Mapping Tool as routes
 - **Docker**: Containerize all apps to be run together with single command
-- **State Hooks**: Use shared hooks to create application using Redux Toolkit
+- **State Hooks**: Use shared hooks to create application using Apollo client
 
 ### Key Components
 
@@ -63,8 +63,8 @@ Phase One will include
 
 ### Technology Stack
 
-- **Frontend**: React Native, TypeScript, Redux, Storybook UI, Next
-- **Backend**: Node, Neo4J
+- **Frontend**: React Native, TypeScript, Apollo Client, Storybook UI, Next
+- **Backend**: Node/Express, Neo4J, Apollo Server
 - **Deployment**: Docker
 
 ## 5. Alternatives Considered

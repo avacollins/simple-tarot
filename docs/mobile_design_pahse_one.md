@@ -69,7 +69,7 @@ Phase One will include
 
 2. **UI Module**: The core user interface library for both mobile and web applications
 
-3. **Hooks Module**: Universal data providers for the UI
+3. **Hooks Module**: Universal data providers for the UI using apollo/client for application state management
 
 4. **Neo4J Module**: Graph DB and API server
 
@@ -77,14 +77,15 @@ Phase One will include
 
 ### Technology Stack
 
-- **Frontend**: React Native, TypeScript, Redux, Storybook UI, Next
-- **Backend**: Node, Neo4J
+- **Frontend**: React Native, TypeScript, Apollo Client Storybook UI, Next
+- **Backend**: Node/Express, Neo4J, Apollo Server
 - **Deployment**: Docker, AWS, Expo
 
 ## 5. Alternatives Considered
 
-1. **MemGraph DB**: Prefer Neo4J
+1. **MemGraph DB**: Prefer Neo4J documentation
 2. **Auroa DB**: Paid product not necessary
+3. **Redux**: Use of redux is redundant with apollo/client and considered an anti-pattern if used together as they are both tracking state there is a risks of syncing issues, use of apollo/client is the source of truth and provides local state management via caching and local variables
 
 ## 6. Timeline
 
@@ -97,7 +98,7 @@ Phase One will include
 
 - [x] Set up yarn workspace and application file based routing
 - [ ] Implement UI packages in Storybook
-- [ ] Migrate data and client libraries to use Neo4J
+- [ ] Migrate data and client libraries to use Apollo client for state management
 - [ ] Implement UI screens into application code
 
 ### Phase 4: Testing and Deployment (August 2025)
@@ -116,7 +117,7 @@ Phase One will include
 
 ### Open Questions
 
-- **Test**: Frameworks TBD
+- **Test**: Storybook UI for testing UI components, TBD for Next and Node
 
 - **Versioning**: Leaning towards some form of Conventional Commits for monorepo overall, with EAS for mobile app build increments
 

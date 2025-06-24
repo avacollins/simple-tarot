@@ -40,7 +40,6 @@ const useAvatarImage = () => {
     const getAvatarImage = () => avatarImage;
 
     const saveAvatarImage = () => {
-        // Placeholder for Redux action to save the avatar image to user profile and update
         console.log('Long press on avatar image');
     };
 
