@@ -7,7 +7,7 @@ import { graphql, HttpResponse } from 'msw';
 import mdx from './display-card-names.mdx';
 
 const meta = {
-    title: 'Molecules/DisplayCardNames',
+    title: 'Organisms/DisplayCardNames',
     component: DisplayCardNames,
     parameters: {
         docs: {
