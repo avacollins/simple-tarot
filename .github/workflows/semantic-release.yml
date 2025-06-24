@@ -1,4 +1,4 @@
-name: Runs Semantic Release to generate releases and changelogs
+name: Release
 
 on:
     push:
