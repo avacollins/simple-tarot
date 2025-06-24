@@ -1,3 +1,10 @@
+# [@simpletarot/hooks-v1.5.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.4.0...@simpletarot/hooks-v1.5.0) (2025-06-24)
+
+
+### Features
+
+* Apollo Client Shared State ([#12](https://github.com/avacollins/simple-tarot/issues/12)) ([d4cbbf4](https://github.com/avacollins/simple-tarot/commit/d4cbbf414dbf4afc7aa77c1485bddc58e610af5d))
+
 # [@simpletarot/hooks-v1.4.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.3.0...@simpletarot/hooks-v1.4.0) (2025-06-23)
 
 
