@@ -4,6 +4,22 @@
 
 Simple Tarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content generation using an LLM.
 
+## Contents
+
+A yarn workspace monorepository to manage shared React Native component libraries used in both mobile tarot application and web admin application. 
+
+`apps/admin` is a Next web application using React Native Web shared components from hooks and ui packages to debug tarot mobile app and admin the graph database.
+
+`apps/graph-api` is an Apollo graph server built on top of Node/Express server connected to a Neo4j database, providing the core API for both client applications.
+
+`apps/tarot` is a React Native mobile app uses shared components from hooks and ui packages and Expo framework for application configuration, building, testing and deployment.
+
+`docs` are a collection of documents that facilitate the planning and execution of the project as a whole, used to provide context over time.
+
+`packages/hooks` is a shared package written in React Native using Apollo Client for data fetching, application state management and caching. 
+
+`packages/ui` is a shared package written in React Native using Storybook UI for building, documenting, testing and exporting UI components.
+
 
 ## Status
 
@@ -11,23 +27,24 @@ Currently in Development: Mobile Design Phase One, [see the design doc](./docs/m
 
 Live Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
 
-## Architectural Documents
+## Docs
 
 👉🏽 Check out 
- 
- - [Project Spec](./docs/project_spec.md)
+ - [@simpletarot/hooks](./packages/hooks/README.md)
 
- - [Requirements](./docs/requirements.md)
+ - [Web Admin Design Document Phase One WIP](./docs/web_admin_design.md)
+
+ - [Mobile Design Document Phase One](./docs/mobile_design_pahse_one.md)
  
- - [Architectural Decisions](./docs/adr.md)
+ - [Sequence Diagrams](./docs/sequence_diagrams.md)
 
  - [Domain Model](./docs/domain_model.md)
 
- - [Sequence Diagrams](./docs/sequence_diagrams.md)
+ - [Architectural Decisions](./docs/adr.md)
 
- - [Mobile Design Document Phase One](./docs/mobile_design_pahse_one.md)
+ - [Requirements](./docs/requirements.md)
 
- - [Web Admin Design Document Phase One WIP](./docs/web_admin_design.md)
+ - [Project Spec](./docs/project_spec.md)
 
 
  # Copyright
