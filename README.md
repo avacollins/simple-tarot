@@ -10,6 +10,12 @@ Currently in Development: Mobile Design Phase One, [see the design doc](./docs/m
 
 Live Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
 
+### Open Issues
+
+- [Graph API](https://github.com/avacollins/simple-tarot/issues/4#issue-3098360267)
+- [Mobile App](https://github.com/avacollins/simple-tarot/issues/3#issue-3098355888)
+- [UI Library](https://github.com/avacollins/simple-tarot/issues/2#issue-3098353256)
+
 ## Contents
 
 A yarn workspace monorepository to manage shared React Native component libraries used in both mobile tarot application and web admin application. 
