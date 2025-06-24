@@ -4,11 +4,12 @@
 
 Simple Tarot is a tarot card reading app that is a rebuild of an [existing application](https://github.com/avacollins/tarot-ix) in order to expand content generation using an LLM.
 
+
 ## Status
 
 Currently in Development: Mobile Design Phase One, [see the design doc](./docs/mobile_design_pahse_one.md)
 
-Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
+Live Component Reference [Storybook UI Component Library](https://avacollins.github.io/simple-tarot)
 
 ## Architectural Documents
 

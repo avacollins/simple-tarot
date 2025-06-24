@@ -1,15 +1,15 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import React from 'react';
+import { typePolicies } from '@simpletarot/hooks';
 
 const MobileProviders: React.FC<{ env; children: React.ReactNode }> = ({
     env,
     children
 }) => {
-    // Initialize Apollo Client with environment variable
     const client = new ApolloClient({
         uri: env.GRAPH_URI || 'http://localhost:4000/graphql',
-        cache: new InMemoryCache()
+        cache: new InMemoryCache(typePolicies)
     });
 
     return <ApolloProvider client={client}>{children}</ApolloProvider>;
