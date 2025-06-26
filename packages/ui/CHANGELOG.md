@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.7.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.6.0...@simpletarot/ui-v1.7.0) (2025-06-26)
+
+
+### Features
+
+* new reading screen ([88f8a11](https://github.com/avacollins/simple-tarot/commit/88f8a11df3fd33ea143e316305a38e6b86dc161d))
+
 # [@simpletarot/ui-v1.6.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.5.0...@simpletarot/ui-v1.6.0) (2025-06-24)
 
 
