@@ -5,5 +5,13 @@
     "type": "module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "dependencies": {}
+    "scripts": {
+        "test": "vitest --root src/"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@testing-library/react-hooks": "^8.0.1",
+        "jsdom": "^26.1.0",
+        "vitest": "^3.2.4"
+    }
 }

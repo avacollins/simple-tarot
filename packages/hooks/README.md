@@ -21,7 +21,7 @@ State is maintained by providing type policies for the shape of the application 
 
 ## Hooks
 
-Hooks map state to ui components by exposing an api for a single organism or screen, atoms and molecules have a self contained state and do not use hooks. 
+Hooks map state to ui components by exposing an api for a single component and connecting it to application state.
 
 Hooks are documented in the Storybook UI library alongside the component they are implemented in for specific inputs.
 

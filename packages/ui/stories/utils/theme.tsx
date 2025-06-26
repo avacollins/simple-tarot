@@ -4,6 +4,7 @@ interface ThemeColors {
     background: string;
     primary: string;
     secondary: string;
+    base: string;
     white: string;
     black: string;
     grey0: string;
@@ -29,7 +30,8 @@ const fallbackColor = '#ff0000';
 const themeColors: ThemeColors = {
     background: colors.spanish_gray?.base ?? fallbackColor,
     primary: colors.smoky_black?.base ?? fallbackColor,
-    secondary: '#fff',
+    secondary: colors.cambridge_blue?.accent1 ?? fallbackColor,
+    base: colors.cambridge_blue?.base ?? fallbackColor,
     white: colors.spanish_white?.base ?? fallbackColor,
     black: colors.smoky_black?.base ?? fallbackColor,
     grey0: colors.silver_sand?.light ?? fallbackColor,

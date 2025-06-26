@@ -37,3 +37,25 @@ the component `displayImage` state. If continue to press the image will continue
 
 - UX treatment to inform user of the press to generate new image feature.
 - Add functionality to save the image URL to user profile on long press.
+
+
+# useAvatarImage Hook
+
+The `useAvatarImage` hook is used to fetch a random avatar image URL from the core-api using apollo client for caching and state management.
+It provides methods to get a new avatar image, save the current avatar image, and handle errors.
+
+## Usage
+
+```javascript
+import { useAvatarImage } from '@simpletarot/core-api';
+
+const { avatarImage, error, getAvatarImage, getNewAvatarImage, saveAvatarImage } = useAvatarImage();
+```
+
+### API
+
+- `avatarImage`: The current avatar image URL saved in hook state.
+- `error`: Error object if there is an issue fetching the avatar image.
+- `getAvatarImage`: Function to fetch the avatar image from local state.
+- `getNewAvatarImage`: Function to fetch a new random avatar image from the core-api and update local state.
+- `saveAvatarImage`: Stubbed to save the current avatar image URL to the user profile in future implementations.
