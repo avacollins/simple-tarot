@@ -1,3 +1,10 @@
+# [tarot-v1.4.0](https://github.com/avacollins/simple-tarot/compare/tarot-v1.3.0...tarot-v1.4.0) (2025-06-26)
+
+
+### Features
+
+* new reading screen ([88f8a11](https://github.com/avacollins/simple-tarot/commit/88f8a11df3fd33ea143e316305a38e6b86dc161d))
+
 # [tarot-v1.3.0](https://github.com/avacollins/simple-tarot/compare/tarot-v1.2.0...tarot-v1.3.0) (2025-06-20)
 
 
