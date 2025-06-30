@@ -6,12 +6,17 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "test": "vitest --root src/"
+        "test": "vitest --config vitetest.config.mjs --coverage"
     },
     "dependencies": {},
     "devDependencies": {
-        "@testing-library/react-hooks": "^8.0.1",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/react": "^16.3.0",
+        "@types/jest": "^30.0.0",
+        "@vitest/coverage-v8": "^3.2.4",
+        "@vitest/ui": "^3.2.4",
         "jsdom": "^26.1.0",
+        "typescript": "^5.8.3",
         "vitest": "^3.2.4"
     }
 }
