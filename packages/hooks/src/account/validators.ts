@@ -1,7 +1,11 @@
 import { FormError } from '@simpletarot/ui';
 
 export const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // This regex checks for:
+    // - A valid local part (before the @) that does not contain consecutive dots
+    // - A valid domain part (after the @) that does not contain consecutive dots
+    // - At least one dot in the domain part
+    const re = /^[^\s@.]+(\.[^\s@.]+)*@[^\s@.]+(\.[^\s@.]+)+$/;
 
     return re.test(email);
 };
