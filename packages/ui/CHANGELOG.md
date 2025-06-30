@@ -1,3 +1,10 @@
+# [@simpletarot/ui-v1.7.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.7.0...@simpletarot/ui-v1.7.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* add explicit build-types directive to each package to be run on root yarn build ([a7f441e](https://github.com/avacollins/simple-tarot/commit/a7f441eeddc7155ae4cee34cc42c45fd0ac59697))
+
 # [@simpletarot/ui-v1.7.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.6.0...@simpletarot/ui-v1.7.0) (2025-06-26)
 
 
