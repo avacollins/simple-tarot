@@ -13,7 +13,7 @@
     "scripts": {
         "admin:dev": "yarn workspace admin dev",
         "build-storybook": "yarn workspace @simpletarot/ui build-storybook",
-        "build": "yarn lint:fix && yarn workspaces run tsc -b",
+        "build": "yarn lint:fix && yarn workspaces run build-types",
         "graph:build": "yarn workspace graph-api build",
         "graph:dev": "yarn workspace graph-api dev",
         "graph:start": "yarn workspace graph-api start",

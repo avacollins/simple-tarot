@@ -22,7 +22,10 @@ export default defineConfig([
     {
       ignores: [
         '**/*.mjs',
+        '**/*.test.ts',
+        '**/*.test.tsx',
         '**/assets/**',
+        '**/coverage/**',
         '**/dist/**',
         '**/node_modules/**',
         '**/public/**',
@@ -34,6 +37,7 @@ export default defineConfig([
         'packages/ui/.storybook_server/**',
         'packages/ui/.storybook/**',
         'packages/ui/storybook-static/**',
+
       ]
     },
     {

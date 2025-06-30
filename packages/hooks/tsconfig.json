@@ -16,11 +16,14 @@
     },
     "include": [
         "src/**/*",
-        "index.tsx",
+        "index.tsx"
     ],
     "exclude": [
         "**/*.js",
         "node_modules",
-        "dist"
+        "dist/**",
+        "coverage/**",
+        "**/*.test.ts",
+        "**/*.test.tsx"
     ]
 }
