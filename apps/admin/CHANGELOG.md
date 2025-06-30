@@ -1,3 +1,10 @@
+# [admin-v1.2.1](https://github.com/avacollins/simple-tarot/compare/admin-v1.2.0...admin-v1.2.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* add explicit build-types directive to each package to be run on root yarn build ([a7f441e](https://github.com/avacollins/simple-tarot/commit/a7f441eeddc7155ae4cee34cc42c45fd0ac59697))
+
 # [admin-v1.2.0](https://github.com/avacollins/simple-tarot/compare/admin-v1.1.0...admin-v1.2.0) (2025-06-20)
 
 
