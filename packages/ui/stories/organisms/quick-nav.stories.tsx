@@ -18,8 +18,4 @@ export default meta;
 
 type Story = StoryObj<typeof QuickNav>;
 
-export const Default: Story = {
-    args: {
-        navigationEvent: navOpen => console.log('Navigation event:', navOpen)
-    }
-};
+export const Default: Story = {};
