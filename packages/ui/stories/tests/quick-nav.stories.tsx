@@ -18,9 +18,11 @@ type Story = StoryObj<typeof QuickNav>;
 export const QuickNavOpenTest: Story = {
     play: async ({ mount, step }) => {
         await mount(<QuickNav />);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
         const canvas = within(screen.getByTestId('quick-nav-container'));
 
-        await step('Click toggle button', async () => {
+        await step('Click open button', async () => {
             const toggleButton = canvas.getByTestId('quick-nav-toggle');
             expect(toggleButton).toBeVisible();
             fireEvent.click(toggleButton);
@@ -28,7 +30,6 @@ export const QuickNavOpenTest: Story = {
         });
 
         await step('Check if quick nav is open', async () => {
-            console.log('Checking if quick nav is open');
             await waitFor(() =>
                 expect(canvas.getByTestId('quick-nav-profile-action')).toBeVisible()
             );
@@ -43,24 +44,27 @@ export const QuickNavOpenTest: Story = {
             );
         });
 
-        await step('Click toggle button again', async () => {
-            const profileAction = canvas.getByTestId('quick-nav-profile-action');
-            console.log('Clicking profile action');
-            fireEvent.click(profileAction);
-            fireEvent.animationEnd(profileAction);
+        await step('Click close button', async () => {
+            const closeButton = canvas.getByTestId('quick-nav-toggle');
+            expect(closeButton).toBeVisible();
+            fireEvent.click(closeButton);
+            fireEvent.animationEnd(closeButton);
+        });
+
+        await step('Check if quick nav is closed', async () => {
             await waitFor(() =>
-                expect(canvas.getByTestId('quick-nav-profile-action')).not.toBeVisible()
+                expect(canvas.queryByTestId('quick-nav-profile-action')).not.toBeVisible()
             );
             await waitFor(() =>
-                expect(canvas.getByTestId('quick-nav-history-action')).not.toBeVisible()
+                expect(canvas.queryByTestId('quick-nav-history-action')).not.toBeVisible()
             );
             await waitFor(() =>
                 expect(
-                    canvas.getByTestId('quick-nav-new-reading-action')
+                    canvas.queryByTestId('quick-nav-new-reading-action')
                 ).not.toBeVisible()
             );
             await waitFor(() =>
-                expect(canvas.getByTestId('quick-nav-home-action')).not.toBeVisible()
+                expect(canvas.queryByTestId('quick-nav-home-action')).not.toBeVisible()
             );
         });
     }
