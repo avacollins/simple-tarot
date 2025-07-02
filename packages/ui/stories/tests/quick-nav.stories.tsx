@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react-native-web-vite';
-import QuickNav from '../organisms/quick-nav';
+import QuickNav from '../molecules/quick-nav';
 import React from 'react';
 
 import { forceReloadDecorator } from './force-reload-decorator';
 import { expect, fireEvent, screen, within, waitFor } from 'storybook/test';
 
 const meta: Meta<typeof QuickNav> = {
-    title: 'Organisms/QuickNav',
+    title: 'Molecules/QuickNav',
     component: QuickNav,
     decorators: [forceReloadDecorator]
 } satisfies Meta<typeof QuickNav>;
