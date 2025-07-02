@@ -1,0 +1,47 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as CardStories from './card.stories';
+
+<Meta of={CardStories.default} title='Card'/>
+
+# Card Component
+
+The Card component displays a tarot card image based on the provided card index. It can show either the front or back of the card and supports custom styles.
+
+## Overview
+- Displays a tarot card image using the `useSvgCards` hook.
+- Supports both front and back faces of the card.
+- Can be styled with custom width, height, and opacity.
+- SVG content can be mocked.
+- Supports press events to trigger actions.
+
+## Props
+- `cardIndex`: Index of the card to display.
+- `face`: Boolean to indicate if the front face of the card should be displayed (default is `false`).
+- `mocked`: Boolean to indicate if the SVG content should be mocked (default is `false`).
+- `styleProps`: Custom styles for the card, including width, height, and opacity.
+- `onPress`: Function to call when the card is pressed.
+
+## State
+None.
+
+# useSvgCards Hook
+The `useSvgCards` hook is used to fetch the SVG content of a tarot card based
+on the provided card index. It returns the SVG component that can be rendered directly in the UI.
+## Usage
+```javascript
+import useSvgCards from '@simpletarot/hooks/src/cards/use-svg-cards';
+
+const MyComponent = () => {
+  const { getCardSvg } = useSvgCards();
+
+  return (
+    <div>
+      {getCardSvg(0)}
+    </div>
+  );
+};
+```
+
+## API
+- `getCardSvg(cardIndex: number)`: Function to get the SVG component for the
+specified card index. Returns a React component that can be rendered.
