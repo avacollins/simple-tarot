@@ -1,3 +1,10 @@
+# [tarot-v1.5.0](https://github.com/avacollins/simple-tarot/compare/tarot-v1.4.1...tarot-v1.5.0) (2025-07-02)
+
+
+### Features
+
+* **ui:** Adds QuickNav and Home Screen ([#14](https://github.com/avacollins/simple-tarot/issues/14)) ([31a2a99](https://github.com/avacollins/simple-tarot/commit/31a2a9976c484ad3f9d8f54a0b1dafcab19dcba4))
+
 # [tarot-v1.4.1](https://github.com/avacollins/simple-tarot/compare/tarot-v1.4.0...tarot-v1.4.1) (2025-06-30)
 
 
