@@ -39,9 +39,6 @@ export const QuickNavOpenTest: Story = {
             await waitFor(() =>
                 expect(canvas.getByTestId('quick-nav-new-reading-action')).toBeVisible()
             );
-            await waitFor(() =>
-                expect(canvas.getByTestId('quick-nav-home-action')).toBeVisible()
-            );
         });
 
         await step('Click close button', async () => {
@@ -62,9 +59,6 @@ export const QuickNavOpenTest: Story = {
                 expect(
                     canvas.queryByTestId('quick-nav-new-reading-action')
                 ).not.toBeVisible()
-            );
-            await waitFor(() =>
-                expect(canvas.queryByTestId('quick-nav-home-action')).not.toBeVisible()
             );
         });
     }

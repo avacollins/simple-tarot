@@ -70,17 +70,6 @@ const QuickNav = () => {
                     onPress={startNewReading}
                     testID="quick-nav-new-reading-action"
                 />
-                <SpeedDial.Action
-                    color="white"
-                    icon={{
-                        type: 'material-community',
-                        name: 'home-outline',
-                        color: '#000'
-                    }}
-                    title="Home"
-                    onPress={goToHome}
-                    testID="quick-nav-home-action"
-                />
             </SpeedDial>
         </View>
     );

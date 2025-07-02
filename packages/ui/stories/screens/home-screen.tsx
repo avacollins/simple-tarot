@@ -2,6 +2,8 @@ import { Dimensions, Image, StyleSheet, View } from 'react-native';
 
 import Background from '../atoms/background';
 import MobileView from '../templates/mobile-view';
+import NewReading from '../organisms/new-reading';
+import QuickNav from '../organisms/quick-nav';
 import React from 'react';
 
 const { height: screenHeight } = Dimensions.get('window');
@@ -18,15 +20,8 @@ const styles = StyleSheet.create({
 
 const HomeScreen = () => (
     <MobileView>
-        <View style={styles.container}>
-            <Background>
-                <Image
-                    style={{ width, height }}
-                    source={require('../../assets/images/home.jpg')}
-                    resizeMode="contain"
-                />
-            </Background>
-        </View>
+        <NewReading onStart={() => console.log('New Reading Started')} />
+        <QuickNav />
     </MobileView>
 );
 
