@@ -149,3 +149,10 @@ dist
 **/ignore/
 *storybook.log
 storybook-static
+
+# Custom assets not to be checked into github
+packages/hooks/src/cards/coins
+packages/hooks/src/cards/cups
+packages/hooks/src/cards/swords
+packages/hooks/src/cards/wands
+packages/hooks/src/cards/major-arcana
