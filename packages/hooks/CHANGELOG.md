@@ -1,3 +1,15 @@
+# [@simpletarot/hooks-v1.7.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.6.1...@simpletarot/hooks-v1.7.0) (2025-07-03)
+
+
+### Bug Fixes
+
+* add cardsvgs ([5007742](https://github.com/avacollins/simple-tarot/commit/50077424cd38ef92d6c7d653c8b17dfcb2369eac))
+
+
+### Features
+
+* Card component, useSVGCard and docs added ([#17](https://github.com/avacollins/simple-tarot/issues/17)) ([5a783a4](https://github.com/avacollins/simple-tarot/commit/5a783a43432c06dc43db5e36c049c5f45db466dd))
+
 # [@simpletarot/hooks-v1.6.1](https://github.com/avacollins/simple-tarot/compare/@simpletarot/hooks-v1.6.0...@simpletarot/hooks-v1.6.1) (2025-06-30)
 
 
