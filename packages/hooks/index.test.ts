@@ -3,16 +3,6 @@ import * as HooksIndex from './index';
 import { describe, expect, it } from 'vitest';
 
 describe('hooks package exports', () => {
-    it('should export useSignupForm', () => {
-        expect(HooksIndex.useSignupForm).toBeDefined();
-        expect(typeof HooksIndex.useSignupForm).toBe('function');
-    });
-
-    it('should export useLoginForm', () => {
-        expect(HooksIndex.useLoginForm).toBeDefined();
-        expect(typeof HooksIndex.useLoginForm).toBe('function');
-    });
-
     it('should export useAvatarImage', () => {
         expect(HooksIndex.useAvatarImage).toBeDefined();
         expect(typeof HooksIndex.useAvatarImage).toBe('function');
@@ -21,6 +11,26 @@ describe('hooks package exports', () => {
     it('should export useForgotPasswordForm', () => {
         expect(HooksIndex.useForgotPasswordForm).toBeDefined();
         expect(typeof HooksIndex.useForgotPasswordForm).toBe('function');
+    });
+
+    it('should export useInstructions', () => {
+        expect(HooksIndex.useInstructions).toBeDefined();
+        expect(typeof HooksIndex.useInstructions).toBe('function');
+    });
+
+    it('should export useLoginForm', () => {
+        expect(HooksIndex.useLoginForm).toBeDefined();
+        expect(typeof HooksIndex.useLoginForm).toBe('function');
+    });
+
+    it('should export useSignupForm', () => {
+        expect(HooksIndex.useSignupForm).toBeDefined();
+        expect(typeof HooksIndex.useSignupForm).toBe('function');
+    });
+
+    it('should export useSvgCards', () => {
+        expect(HooksIndex.useSvgCards).toBeDefined();
+        expect(typeof HooksIndex.useSvgCards).toBe('function');
     });
 
     it('should export AvatarConfig enum', () => {

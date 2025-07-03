@@ -34,7 +34,7 @@
         "storybook": "^9.0.4",
         "ts-node": "^10.9.2",
         "@types/node": "^24.0.1",
-        "@types/react": "~19.0.10"
+        "@types/react": "19.0.10"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
