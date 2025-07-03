@@ -1,3 +1,10 @@
+# [tarot-v1.6.0](https://github.com/avacollins/simple-tarot/compare/tarot-v1.5.0...tarot-v1.6.0) (2025-07-03)
+
+
+### Features
+
+* Card component, useSVGCard and docs added ([#17](https://github.com/avacollins/simple-tarot/issues/17)) ([5a783a4](https://github.com/avacollins/simple-tarot/commit/5a783a43432c06dc43db5e36c049c5f45db466dd))
+
 # [tarot-v1.5.0](https://github.com/avacollins/simple-tarot/compare/tarot-v1.4.1...tarot-v1.5.0) (2025-07-02)
 
 
