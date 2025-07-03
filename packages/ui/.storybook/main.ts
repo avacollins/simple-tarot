@@ -14,7 +14,16 @@ const config: StorybookConfig = {
     addons: ['@storybook/addon-docs'],
     framework: {
         name: getAbsolutePath('@storybook/react-native-web-vite'),
-        options: {}
+        options: {
+            pluginReactOptions: {
+                babel: {
+                    plugins: [
+                        '@babel/plugin-proposal-export-namespace-from',
+                        'react-native-reanimated/plugin'
+                    ]
+                }
+            }
+        }
     },
     staticDirs: ['../public']
 };
