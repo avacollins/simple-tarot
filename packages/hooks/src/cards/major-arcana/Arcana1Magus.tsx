@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import Svg, { Path } from 'react-native-svg';
 
-const SvgCard = props => (
+const SvgArcana1Magus = props => (
     <Svg
         xmlns="http://www.w3.org/2000/svg"
         width={400}
@@ -19,4 +18,4 @@ const SvgCard = props => (
     </Svg>
 );
 
-export default SvgCard;
+export default SvgArcana1Magus;

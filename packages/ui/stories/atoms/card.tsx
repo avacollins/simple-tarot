@@ -2,14 +2,12 @@
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import React from 'react';
-import SvgCard from '../tests/mocks/svgCard';
 import useSvgCards from '@simpletarot/hooks/src/cards/use-svg-cards';
 import { vmin } from 'react-native-expo-viewport-units';
 
 export type CardProps = {
     cardIndex: number;
     face?: boolean;
-    mocked?: boolean;
     styleProps?: any;
     onPress?: () => void;
 };
@@ -34,20 +32,15 @@ export const cardStyles = StyleSheet.create({
 export default function Card({
     cardIndex,
     face = false,
-    mocked = false,
     onPress,
     styleProps
 }: CardProps) {
     const _width = styleProps ? styleProps.width : width;
     const _height = styleProps ? styleProps.height : height;
     const opacity = styleProps ? styleProps.opacity : 1;
-    const svgImage = mocked ? (
-        <SvgCard />
-    ) : (
-        useSvgCards(cardIndex, {
-            ...{ width: _width, height: _height, opacity }
-        })
-    );
+    const svgImage = useSvgCards(cardIndex, {
+        ...{ width: _width, height: _height, opacity }
+    });
 
     const cardImage = face ? (
         svgImage

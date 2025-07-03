@@ -24,6 +24,6 @@
         "dist/**",
         "coverage/**",
         "**/*.test.ts",
-        "**/*.test.tsx"
+        "**/*.test.tsx",
     ]
 }

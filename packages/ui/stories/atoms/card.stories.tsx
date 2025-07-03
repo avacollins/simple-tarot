@@ -54,7 +54,6 @@ export const FaceCard: Story = {
     args: {
         cardIndex: 1,
         face: true,
-        mocked: true,
         styleProps: {
             width: 100,
             height: 200,
