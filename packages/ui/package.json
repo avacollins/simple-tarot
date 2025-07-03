@@ -30,7 +30,7 @@
         "vite": "^6.3.5"
     },
     "dependencies": {
-        "hooks": "*",
+        "@simpletarot/hooks": "*",
         "msw": "^2.10.2",
         "react-native-reanimated-monorepo": "react-native-reanimated/plugin"
     },
