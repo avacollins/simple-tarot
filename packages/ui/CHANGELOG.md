@@ -1,3 +1,15 @@
+# [@simpletarot/ui-v1.9.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.8.0...@simpletarot/ui-v1.9.0) (2025-07-03)
+
+
+### Bug Fixes
+
+* add cardsvgs ([5007742](https://github.com/avacollins/simple-tarot/commit/50077424cd38ef92d6c7d653c8b17dfcb2369eac))
+
+
+### Features
+
+* Card component, useSVGCard and docs added ([#17](https://github.com/avacollins/simple-tarot/issues/17)) ([5a783a4](https://github.com/avacollins/simple-tarot/commit/5a783a43432c06dc43db5e36c049c5f45db466dd))
+
 # [@simpletarot/ui-v1.8.0](https://github.com/avacollins/simple-tarot/compare/@simpletarot/ui-v1.7.1...@simpletarot/ui-v1.8.0) (2025-07-02)
 
 
