@@ -206,11 +206,15 @@ describe('useSvgCards', () => {
             const cups = [];
             const swords = [];
             const coins = [];
-
+            // @ts-expect-error
             for (let i = 0; i <= 21; i++) majorArcana.push(useSvgCards(i, defaultProps));
+            // @ts-expect-error
             for (let i = 22; i <= 35; i++) wands.push(useSvgCards(i, defaultProps));
+            // @ts-expect-error
             for (let i = 36; i <= 49; i++) cups.push(useSvgCards(i, defaultProps));
+            // @ts-expect-error
             for (let i = 50; i <= 63; i++) swords.push(useSvgCards(i, defaultProps));
+            // @ts-expect-error
             for (let i = 64; i <= 77; i++) coins.push(useSvgCards(i, defaultProps));
 
             expect(majorArcana).toHaveLength(22);

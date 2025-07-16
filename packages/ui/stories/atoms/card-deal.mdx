@@ -1,0 +1,24 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as CardDealStories from './card-deal.stories';
+
+<Meta of={CardDealStories.default} title='CardDeal' />
+
+# CardDeal Component
+The `CardDeal` component is used to display a card in a tarot spread, with the ability to animate its position and rotation based on the spread configuration.
+
+## Overview
+
+The `CardDeal` component is designed to represent a single card within a tarot spread. It utilizes the `react-native-reanimated` library to provide smooth animations for the card's movement and rotation as it is dealt into the spread.
+
+### Props
+
+- `cardIndex`: The index of the card in the spread.
+- `spreadIndex`: The index of the spread position.
+- `reversed`: A boolean indicating if the card is reversed.
+- `dealt`: A boolean indicating if the card has been dealt.
+- `onPress`: A callback function to handle card press events.
+
+## State
+- `hasBeenDealt`: A boolean state that tracks if the card has been dealt.
+- `offset`: An animated value that determines the card's position and rotation in the spread.
+
