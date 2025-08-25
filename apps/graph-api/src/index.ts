@@ -88,6 +88,7 @@ if (serverConfig.ssl) {
                         dataSources: {
                             avatarImageAPI: new AvatarImageAPI()
                         },
+                        driver,
                         req
                     };
                 }

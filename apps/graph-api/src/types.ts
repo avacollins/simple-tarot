@@ -7,6 +7,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string; }
@@ -34,9 +35,85 @@ export type Card = {
   type: Scalars['String']['output'];
 };
 
+export type CelticCross = {
+  __typename?: 'CelticCross';
+  challenge: Scalars['String']['output'];
+  crowns: Scalars['String']['output'];
+  future: Scalars['String']['output'];
+  hope: Scalars['String']['output'];
+  influences: Scalars['String']['output'];
+  outcome: Scalars['String']['output'];
+  past: Scalars['String']['output'];
+  root: Scalars['String']['output'];
+  self: Scalars['String']['output'];
+  situation: Scalars['String']['output'];
+};
+
+export type CelticCrossInput = {
+  challenge: Scalars['String']['input'];
+  crowns: Scalars['String']['input'];
+  future: Scalars['String']['input'];
+  hope: Scalars['String']['input'];
+  influences: Scalars['String']['input'];
+  outcome: Scalars['String']['input'];
+  past: Scalars['String']['input'];
+  root: Scalars['String']['input'];
+  self: Scalars['String']['input'];
+  situation: Scalars['String']['input'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  addSpread: Spread;
+};
+
+
+export type MutationAddSpreadArgs = {
+  spread: SpreadInput;
+};
+
 export type Query = {
   __typename?: 'Query';
   avatarImages: Array<AvatarImage>;
+  cardsByIndex: Array<Card>;
+};
+
+
+export type QueryCardsByIndexArgs = {
+  indexes: Array<Scalars['Int']['input']>;
+};
+
+export type Spread = {
+  __typename?: 'Spread';
+  cards: Array<SpreadCard>;
+  displayName: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  positions: Array<SpreadPosition>;
+};
+
+export type SpreadCard = {
+  __typename?: 'SpreadCard';
+  reversed: CelticCross;
+  upright: CelticCross;
+};
+
+export type SpreadCardInput = {
+  reversed: CelticCrossInput;
+  upright: CelticCrossInput;
+};
+
+export type SpreadInput = {
+  cards: Array<SpreadCardInput>;
+  displayName: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+  positions: Array<Scalars['ID']['input']>;
+};
+
+export type SpreadPosition = {
+  __typename?: 'SpreadPosition';
+  description: Scalars['String']['output'];
+  displayName: Scalars['String']['output'];
+  name: Scalars['String']['output'];
 };
 
 export type Suite = {
@@ -121,8 +198,17 @@ export type ResolversTypes = {
   AvatarImage: ResolverTypeWrapper<AvatarImage>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   Card: ResolverTypeWrapper<Card>;
+  CelticCross: ResolverTypeWrapper<CelticCross>;
+  CelticCrossInput: CelticCrossInput;
+  ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
+  Spread: ResolverTypeWrapper<Spread>;
+  SpreadCard: ResolverTypeWrapper<SpreadCard>;
+  SpreadCardInput: SpreadCardInput;
+  SpreadInput: SpreadInput;
+  SpreadPosition: ResolverTypeWrapper<SpreadPosition>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
   Suite: ResolverTypeWrapper<Suite>;
 };
@@ -132,8 +218,17 @@ export type ResolversParentTypes = {
   AvatarImage: AvatarImage;
   Boolean: Scalars['Boolean']['output'];
   Card: Card;
+  CelticCross: CelticCross;
+  CelticCrossInput: CelticCrossInput;
+  ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
+  Mutation: {};
   Query: {};
+  Spread: Spread;
+  SpreadCard: SpreadCard;
+  SpreadCardInput: SpreadCardInput;
+  SpreadInput: SpreadInput;
+  SpreadPosition: SpreadPosition;
   String: Scalars['String']['output'];
   Suite: Suite;
 };
@@ -156,8 +251,48 @@ export type CardResolvers<ContextType = DataSourceContext, ParentType extends Re
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type CelticCrossResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['CelticCross'] = ResolversParentTypes['CelticCross']> = {
+  challenge?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  crowns?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  future?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  hope?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  influences?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  outcome?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  past?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  root?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  self?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  situation?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  addSpread?: Resolver<ResolversTypes['Spread'], ParentType, ContextType, RequireFields<MutationAddSpreadArgs, 'spread'>>;
+};
+
 export type QueryResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   avatarImages?: Resolver<Array<ResolversTypes['AvatarImage']>, ParentType, ContextType>;
+  cardsByIndex?: Resolver<Array<ResolversTypes['Card']>, ParentType, ContextType, RequireFields<QueryCardsByIndexArgs, 'indexes'>>;
+};
+
+export type SpreadResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Spread'] = ResolversParentTypes['Spread']> = {
+  cards?: Resolver<Array<ResolversTypes['SpreadCard']>, ParentType, ContextType>;
+  displayName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  positions?: Resolver<Array<ResolversTypes['SpreadPosition']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type SpreadCardResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['SpreadCard'] = ResolversParentTypes['SpreadCard']> = {
+  reversed?: Resolver<ResolversTypes['CelticCross'], ParentType, ContextType>;
+  upright?: Resolver<ResolversTypes['CelticCross'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type SpreadPositionResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['SpreadPosition'] = ResolversParentTypes['SpreadPosition']> = {
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  displayName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type SuiteResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Suite'] = ResolversParentTypes['Suite']> = {
@@ -171,7 +306,12 @@ export type SuiteResolvers<ContextType = DataSourceContext, ParentType extends R
 export type Resolvers<ContextType = DataSourceContext> = {
   AvatarImage?: AvatarImageResolvers<ContextType>;
   Card?: CardResolvers<ContextType>;
+  CelticCross?: CelticCrossResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  Spread?: SpreadResolvers<ContextType>;
+  SpreadCard?: SpreadCardResolvers<ContextType>;
+  SpreadPosition?: SpreadPositionResolvers<ContextType>;
   Suite?: SuiteResolvers<ContextType>;
 };
 
