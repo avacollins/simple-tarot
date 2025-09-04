@@ -12,7 +12,8 @@
         "dev": "nodemon --exec node -r ts-node/register --env-file=.env ./src/index.ts",
         "run-db": "docker run --name graph --restart always --env-file=.db.env -p 7474:7474 -p 7687:7687 -v $(pwd)/data:/data -d neo4j:2025.05.0",
         "stop-db": "docker stop graph && docker rm graph",
-        "generate": "graphql-codegen"
+        "generate": "graphql-codegen",
+        "migrate:constraints": "node -r ts-node/register src/migrations/create-constraints.ts"
     },
     "dependencies": {
         "@apollo/datasource-rest": "^6.4.1",

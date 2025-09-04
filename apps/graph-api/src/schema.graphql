@@ -17,60 +17,23 @@ type Card @node {
     type: String!
 }
 
-type SpreadPosition @node {
-    displayName: String!
-    name: String!
-    description: String!
-}
-
-type CelticCross {
-    challenge: String!
-    crowns: String!
-    future: String!
-    hope: String!
-    influences: String!
-    outcome: String!
-    past: String!
-    root: String!
-    self: String!
-    situation: String!
-}
-
-input CelticCrossInput {
-    challenge: String!
-    crowns: String!
-    future: String!
-    hope: String!
-    influences: String!
-    outcome: String!
-    past: String!
-    root: String!
-    self: String!
-    situation: String!
-}
-
-type SpreadCard {
-    reversed: CelticCross!
-    upright: CelticCross!
-}
-
-input SpreadCardInput {
-    reversed: CelticCrossInput!
-    upright: CelticCrossInput!
-}
-
 type Spread @node {
-    displayName: String!
     name: String!
+    displayName: String!
+    description: String!
     positions: [SpreadPosition!]! @relationship(type: "HAS_POSITION", direction: OUT)
-    cards: [SpreadCard!]!
+}
+
+type SpreadPosition @node {
+    name: String!
+    displayName: String!
+    description: String!
 }
 
 input SpreadInput {
     displayName: String!
     name: String!
     positions: [ID!]!
-    cards: [SpreadCardInput!]!
 }
 
 type AvatarImage {

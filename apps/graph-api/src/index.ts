@@ -6,6 +6,7 @@ import { Neo4jGraphQL } from '@neo4j/graphql';
 import bodyparser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { ensureConstraints } from './utils/constraints';
 import express from 'express';
 import { expressMiddleware } from '@as-integrations/express5';
 import { gql } from 'graphql-tag';
@@ -70,6 +71,9 @@ if (serverConfig.ssl) {
 
 (async () => {
     try {
+        // Ensure constraints are created
+        await ensureConstraints(driver);
+
         const schema = await neoSchema.getSchema();
         const server = new ApolloServer({
             schema,
